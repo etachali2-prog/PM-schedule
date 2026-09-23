@@ -5,7 +5,8 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>
 MELBA PRINTING PUBLISHING & PACKAGING SC. - Technical Maintenance
@@ -71,6 +72,7 @@ header{
 .company-title h1{
     margin:0;
     font-size:25px;
+    letter-spacing:.3px;
 }
 
 .company-title p{
@@ -132,6 +134,7 @@ nav{
     font-weight:bold;
     white-space:nowrap;
     border-bottom:3px solid transparent;
+    transition:.2s;
 }
 
 .nav-btn:hover{
@@ -221,6 +224,7 @@ main{
     font-size:13px;
     font-weight:bold;
     margin-bottom:6px;
+    color:#243447;
 }
 
 input,
@@ -233,6 +237,7 @@ textarea{
     background:white;
     color:#243447;
     outline:none;
+    transition:.2s;
 }
 
 input:focus,
@@ -258,10 +263,12 @@ textarea{
     padding:11px 17px;
     font-weight:bold;
     color:white;
+    transition:.2s;
 }
 
 .btn:hover{
-    opacity:.9;
+    transform:translateY(-1px);
+    opacity:.92;
 }
 
 .btn-primary{
@@ -298,7 +305,7 @@ textarea{
 
 
 /* =========================================================
-   TABLE
+   EQUIPMENT TABLE
 ========================================================= */
 
 .search-box{
@@ -336,6 +343,7 @@ tbody tr:hover{
 .machine-number{
     width:55px;
     text-align:center;
+    font-weight:bold;
 }
 
 
@@ -357,6 +365,10 @@ tbody tr:hover{
     border-radius:6px;
 }
 
+.selection-info strong{
+    color:#164e78;
+}
+
 
 /* =========================================================
    MACHINE CARDS
@@ -374,6 +386,12 @@ tbody tr:hover{
     border-radius:9px;
     padding:15px;
     background:#fff;
+    transition:.2s;
+}
+
+.machine-card:hover{
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transform:translateY(-2px);
 }
 
 .machine-card h4{
@@ -400,58 +418,7 @@ tbody tr:hover{
 
 
 /* =========================================================
-   GOOGLE STATUS
-========================================================= */
-
-.google-status{
-    margin-top:15px;
-    padding:12px 15px;
-    border-radius:7px;
-    background:#eef7fb;
-    border-left:4px solid #0b7285;
-    font-size:13px;
-}
-
-.google-status.success{
-    background:#e8f5e9;
-    border-left-color:#198754;
-    color:#146c43;
-}
-
-.google-status.error{
-    background:#fce8e8;
-    border-left-color:#dc3545;
-    color:#a52834;
-}
-
-
-/* =========================================================
-   WEEKLY
-========================================================= */
-
-.week-label{
-    display:inline-block;
-    background:#164e78;
-    color:white;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-.day-label{
-    display:inline-block;
-    background:#eef3f8;
-    color:#164e78;
-    padding:5px 9px;
-    border-radius:15px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-
-/* =========================================================
-   DAILY
+   DAILY WORK
 ========================================================= */
 
 .priority-high{
@@ -485,6 +452,63 @@ tbody tr:hover{
     color:white;
     border-radius:5px;
     padding:6px 9px;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   WEEKLY
+========================================================= */
+
+.week-label{
+    display:inline-block;
+    background:#164e78;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.day-label{
+    display:inline-block;
+    background:#eef3f8;
+    color:#164e78;
+    padding:5px 9px;
+    border-radius:15px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   GOOGLE STATUS
+========================================================= */
+
+.google-status{
+    margin-top:15px;
+    padding:12px;
+    border-radius:7px;
+    font-weight:bold;
+    display:none;
+}
+
+.google-status.success{
+    display:block;
+    background:#e8f5e9;
+    color:#198754;
+}
+
+.google-status.error{
+    display:block;
+    background:#fdecec;
+    color:#dc3545;
+}
+
+.google-status.sending{
+    display:block;
+    background:#eef7fb;
+    color:#164e78;
 }
 
 
@@ -517,6 +541,7 @@ tbody tr:hover{
     color:#6c757d;
     background:#f8f9fa;
     border-radius:8px;
+    margin-top:15px;
 }
 
 
@@ -530,6 +555,10 @@ footer{
     text-align:center;
     padding:18px;
     font-size:12px;
+}
+
+footer strong{
+    color:#fff;
 }
 
 
@@ -553,7 +582,6 @@ footer{
 
 }
 
-
 @media(max-width:700px){
 
     .header-content{
@@ -565,8 +593,14 @@ footer{
         text-align:left;
     }
 
-    .form-grid,
-    .selection-grid,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .selection-grid{
+        grid-template-columns:1fr;
+    }
+
     .machine-grid{
         grid-template-columns:1fr;
     }
@@ -585,7 +619,6 @@ footer{
 </style>
 
 </head>
-
 
 <body>
 
@@ -612,7 +645,6 @@ Electrical & Mechanical Technical Department
 
 </div>
 
-
 <div class="header-right">
 
 <div class="system-status">
@@ -623,9 +655,7 @@ System Online
 
 </div>
 
-<div
-class="clock"
-id="liveClock">
+<div class="clock" id="liveClock">
 Loading...
 </div>
 
@@ -723,7 +753,6 @@ Production and utility equipment under the Technical Department.
 Equipment List
 </h3>
 
-
 <input
 type="text"
 id="equipmentSearch"
@@ -783,7 +812,7 @@ Annual Preventive Maintenance
 </h2>
 
 <p>
-Select month and machine.
+Select a month, group and machine to view the annual PM assignment.
 </p>
 
 </div>
@@ -882,7 +911,7 @@ onchange="displayAnnualMachine()">
 class="selection-info"
 id="annualInfo">
 
-Select a month.
+Select a month and PM group.
 
 </div>
 
@@ -912,7 +941,7 @@ Monthly Preventive Maintenance
 </h2>
 
 <p>
-Select month, group and machine.
+Select a month and machine group to view the monthly PM schedule.
 </p>
 
 </div>
@@ -1011,7 +1040,7 @@ onchange="displayMonthlyMachine()">
 class="selection-info"
 id="monthlyInfo">
 
-Select a month.
+Select a month and PM group.
 
 </div>
 
@@ -1041,7 +1070,7 @@ Weekly Preventive Maintenance
 </h2>
 
 <p>
-Select month and Week 1–4.
+Select the month and one of the four maintenance weeks.
 </p>
 
 </div>
@@ -1177,7 +1206,7 @@ Daily Maintenance Work
 </h2>
 
 <p>
-Record daily maintenance work.
+Record daily maintenance activities and save them locally and to Google Sheets.
 </p>
 
 </div>
@@ -1356,7 +1385,7 @@ Work Description
 
 <textarea
 id="workDescription"
-placeholder="Enter maintenance work performed..."
+placeholder="Enter maintenance work performed, machine problem, inspection result, spare parts used, action taken, etc."
 required></textarea>
 
 </div>
@@ -1386,24 +1415,16 @@ Clear
 
 </div>
 
-
-<div
-class="google-status"
-id="googleStatus">
-
-Google Sheets: Ready
-
-</div>
-
-
 </form>
 
+
+<div
+id="googleStatus"
+class="google-status">
 </div>
 
+</div>
 
-<!-- =========================================================
-     DAILY RECORDS
-========================================================= -->
 
 <div class="card">
 
@@ -1437,7 +1458,7 @@ Maintenance Notification
 </h2>
 
 <p>
-Browser maintenance notifications.
+Enable browser notifications for maintenance reminders.
 </p>
 
 </div>
@@ -1445,10 +1466,15 @@ Browser maintenance notifications.
 
 <div class="card">
 
+<h3 class="card-title">
+Notification Control
+</h3>
+
+
 <div class="notification-box">
 
 <p>
-Enable browser notifications for maintenance reminders.
+Browser notifications can be used for maintenance reminders and system alerts.
 </p>
 
 
@@ -1478,7 +1504,7 @@ Test Notification
 class="notification-status"
 id="notificationStatus">
 
-Checking...
+Checking notification status...
 
 </div>
 
@@ -1487,7 +1513,6 @@ Checking...
 </div>
 
 </section>
-
 
 </div>
 
@@ -1504,11 +1529,11 @@ Checking...
 MELBA PRINTING PUBLISHING & PACKAGING SC.
 </strong>
 
-<br><br>
+<br>
 
 Electrical & Mechanical Technical Department
 
-<br>
+<br><br>
 
 Technical Maintenance Management System
 
@@ -1518,174 +1543,156 @@ Technical Maintenance Management System
 <script>
 
 /* =========================================================
-   GOOGLE APPS SCRIPT URL
-========================================================= */
-
-/*
-   IMPORTANT:
-
-   Put your Google Apps Script Web App /exec URL here.
-
-   Example:
-
-   https://script.google.com/macros/s/XXXXXXXXXXXX/exec
-*/
-
-const GOOGLE_SCRIPT_URL =
-"YOUR_GOOGLE_APPS_SCRIPT_EXEC_URL";
-
-
-/* =========================================================
-   EQUIPMENT
+   EQUIPMENT DATA
 ========================================================= */
 
 const equipment = [
 
-"Thermal CTP",
+    "Thermal CTP",
 
-"Coldset Weboffset (TBO1)",
+    "Coldset Weboffset (TBO1)",
 
-"Coldset Weboffset (TBO2)",
+    "Coldset Weboffset (TBO2)",
 
-"Heatset Weboffset (TBO03)",
+    "Heatset Weboffset (TBO03)",
 
-"Five Unit + Coater + Dryer Sheet Feed",
+    "Five Unit + Coater + Dryer Sheet Feed",
 
-"Four Unit, A1 Size Sheet Feed",
+    "Four Unit, A1 Size Sheet Feed",
 
-"Two Unit, B1 Size Sheet Feed",
+    "Two Unit, B1 Size Sheet Feed",
 
-"One Unit, A3 Size with Perforating and Numbering Sheet Feed",
+    "One Unit, A3 Size with Perforating and Numbering Sheet Feed",
 
-"Full and Spot Automatic UV Laminating",
+    "Full and Spot Automatic UV Laminating",
 
-"Online Perfect Binding Machine with Three Knife",
+    "Online Perfect Binding Machine with Three Knife",
 
-"Online Stitching Machine with Three Knife",
+    "Online Stitching Machine with Three Knife",
 
-"Offline Perfect Binding with PUR",
+    "Offline Perfect Binding with PUR",
 
-"Two Heads Saddle Stitching",
+    "Two Heads Saddle Stitching",
 
-"Single Heads Saddle Stitching",
+    "Single Heads Saddle Stitching",
 
-"Digital Single Knife",
+    "Digital Single Knife",
 
-"Digital Three Knife Cutting",
+    "Digital Three Knife Cutting",
 
-"Folding Machine",
+    "Folding Machine",
 
-"Automatic Spiral Binding",
+    "Automatic Spiral Binding",
 
-"Automatic Die Cutting, Foil Stamping and Embossing",
+    "Automatic Die Cutting, Foil Stamping and Embossing",
 
-"Automatic Book Sewing Machine",
+    "Automatic Book Sewing Machine",
 
-"Punching and Perforating Machine",
+    "Punching and Perforating Machine",
 
-"Automatic Plastic Laminating",
+    "Automatic Plastic Laminating",
 
-"Pressing Machine",
+    "Pressing Machine",
 
-"Automatic Eyeleting Machine",
+    "Automatic Eyeleting Machine",
 
-"Reel Paper to Sheet Feed Cutting Machine",
+    "Reel Paper to Sheet Feed Cutting Machine",
 
-"Paper Drilling Machine",
+    "Paper Drilling Machine",
 
-"Horizontal Balling Machine",
+    "Horizontal Balling Machine",
 
-"Compressor",
+    "Compressor",
 
-"Pump System",
+    "Pump System",
 
-"Generator",
+    "Generator",
 
-"Air Dryer",
+    "Air Dryer",
 
-"Tecnotrans"
+    "Tecnotrans"
 
 ];
 
 
 /* =========================================================
-   ANNUAL GROUP 1
+   ANNUAL PM GROUP 1
 ========================================================= */
 
 const group1 = [
 
-"Thermal CTP",
+    "Thermal CTP",
 
-"Coldset Weboffset (TBO2)",
+    "Coldset Weboffset (TBO2)",
 
-"Five Unit + Coater + Dryer Sheet Feed",
+    "Five Unit + Coater + Dryer Sheet Feed",
 
-"Two Unit, B1 Size Sheet Feed",
+    "Two Unit, B1 Size Sheet Feed",
 
-"Full and Spot Automatic UV Laminating",
+    "Full and Spot Automatic UV Laminating",
 
-"Offline Perfect Binding with PUR",
+    "Offline Perfect Binding with PUR",
 
-"Two Heads Saddle Stitching",
+    "Two Heads Saddle Stitching",
 
-"Digital Single Knife",
+    "Digital Single Knife",
 
-"Folding Machine",
+    "Folding Machine",
 
-"Automatic Spiral Binding",
+    "Automatic Spiral Binding",
 
-"Automatic Die Cutting, Foil Stamping and Embossing",
+    "Automatic Die Cutting, Foil Stamping and Embossing",
 
-"Pressing Machine",
+    "Pressing Machine",
 
-"Automatic Eyeleting Machine",
+    "Automatic Eyeleting Machine",
 
-"Reel Paper to Sheet Feed Cutting Machine",
+    "Reel Paper to Sheet Feed Cutting Machine",
 
-"Compressor",
+    "Compressor",
 
-"Pump System"
+    "Pump System"
 
 ];
 
 
 /* =========================================================
-   ANNUAL GROUP 2
+   ANNUAL PM GROUP 2
 ========================================================= */
 
 const group2 = [
 
-"Coldset Weboffset (TBO1)",
+    "Coldset Weboffset (TBO1)",
 
-"Heatset Weboffset (TBO03)",
+    "Heatset Weboffset (TBO03)",
 
-"Four Unit, A1 Size Sheet Feed",
+    "Four Unit, A1 Size Sheet Feed",
 
-"One Unit, A3 Size with Perforating and Numbering Sheet Feed",
+    "One Unit, A3 Size with Perforating and Numbering Sheet Feed",
 
-"Online Perfect Binding Machine with Three Knife",
+    "Online Perfect Binding Machine with Three Knife",
 
-"Online Stitching Machine with Three Knife",
+    "Online Stitching Machine with Three Knife",
 
-"Single Heads Saddle Stitching",
+    "Single Heads Saddle Stitching",
 
-"Digital Three Knife Cutting",
+    "Digital Three Knife Cutting",
 
-"Automatic Book Sewing Machine",
+    "Automatic Book Sewing Machine",
 
-"Punching and Perforating Machine",
+    "Punching and Perforating Machine",
 
-"Automatic Plastic Laminating",
+    "Automatic Plastic Laminating",
 
-"Paper Drilling Machine",
+    "Paper Drilling Machine",
 
-"Horizontal Balling Machine",
+    "Horizontal Balling Machine",
 
-"Generator",
+    "Generator",
 
-"Air Dryer",
+    "Air Dryer",
 
-"Tecnotrans"
+    "Tecnotrans"
 
 ];
 
@@ -1727,27 +1734,35 @@ const monthGroup = {
 
 const technicians = [
 
-"Mechanical Team Leader",
+    "Mechanical Team Leader",
 
-"Senior Mechanic",
+    "Senior Mechanic",
 
-"Senior Electrician",
+    "Senior Electrician",
 
-"Mechanic II",
+    "Mechanic II",
 
-"Electrician II",
+    "Electrician II",
 
-"Junior Electrician",
+    "Junior Electrician",
 
-"Junior Mechanic",
+    "Junior Mechanic",
 
-"Senior Machinist",
+    "Senior Machinist",
 
-"Assistant Machinist",
+    "Assistant Machinist",
 
-"Tools Keeper"
+    "Tools Keeper"
 
 ];
+
+
+/* =========================================================
+   GOOGLE APPS SCRIPT URL
+========================================================= */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbwm2rq4RiIO8WqmMiYSabgrLG4ui-ElyNGtD-5b_hxxIlW03io6kSs4ZGEqos6BgMX1/exec";
 
 
 /* =========================================================
@@ -1758,10 +1773,8 @@ function showSection(sectionId,button){
 
     document
         .querySelectorAll(".section")
-        .forEach(function(section){
-
+        .forEach(section=>{
             section.classList.remove("active");
-
         });
 
 
@@ -1772,18 +1785,20 @@ function showSection(sectionId,button){
 
     document
         .querySelectorAll(".nav-btn")
-        .forEach(function(btn){
-
+        .forEach(btn=>{
             btn.classList.remove("active");
-
         });
 
 
     if(button){
-
         button.classList.add("active");
-
     }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
@@ -1819,16 +1834,16 @@ function updateClock(){
         );
 
 
-    document.getElementById(
-        "liveClock"
-    ).textContent =
+    document
+        .getElementById("liveClock")
+        .textContent =
         date + " | " + time;
 
 }
 
 
 /* =========================================================
-   EQUIPMENT TABLE
+   EQUIPMENT DISPLAY
 ========================================================= */
 
 function displayEquipment(){
@@ -1842,40 +1857,42 @@ function displayEquipment(){
     tbody.innerHTML = "";
 
 
-    equipment.forEach(function(machine,index){
+    equipment.forEach(
+        (machine,index)=>{
 
-        const row =
-            document.createElement("tr");
-
-
-        const category =
-            index < 27
-            ? "Production"
-            : "Utility";
+            const category =
+                index < 27
+                ? "Production"
+                : "Utility";
 
 
-        row.innerHTML = `
-
-            <td class="machine-number">
-                ${index + 1}
-            </td>
-
-            <td>
-                <strong>
-                    ${escapeHTML(machine)}
-                </strong>
-            </td>
-
-            <td>
-                ${category}
-            </td>
-
-        `;
+            const row =
+                document.createElement("tr");
 
 
-        tbody.appendChild(row);
+            row.innerHTML = `
 
-    });
+                <td class="machine-number">
+                    ${index + 1}
+                </td>
+
+                <td>
+                    <strong>
+                        ${escapeHTML(machine)}
+                    </strong>
+                </td>
+
+                <td>
+                    ${category}
+                </td>
+
+            `;
+
+
+            tbody.appendChild(row);
+
+        }
+    );
 
 }
 
@@ -1897,14 +1914,12 @@ function searchEquipment(){
         .querySelectorAll(
             "#equipmentTableBody tr"
         )
-        .forEach(function(row){
-
-            const text =
-                row.textContent.toLowerCase();
-
+        .forEach(row=>{
 
             row.style.display =
-                text.includes(search)
+                row.textContent
+                .toLowerCase()
+                .includes(search)
                 ? ""
                 : "none";
 
@@ -1925,7 +1940,7 @@ function loadEquipmentDropdown(){
         );
 
 
-    equipment.forEach(function(machine){
+    equipment.forEach(machine=>{
 
         const option =
             document.createElement("option");
@@ -1949,42 +1964,35 @@ function loadEquipmentDropdown(){
 
 function loadTechnicians(){
 
-    const workTechnician =
+    const selects = [
+
         document.getElementById(
             "workTechnician"
-        );
+        ),
 
-
-    const weeklyTechnician =
         document.getElementById(
             "weeklyTechnicianSelect"
-        );
+        )
+
+    ];
 
 
-    technicians.forEach(function(technician){
+    selects.forEach(select=>{
 
-        let option1 =
-            document.createElement("option");
+        technicians.forEach(technician=>{
 
-
-        option1.value = technician;
-
-        option1.textContent = technician;
+            const option =
+                document.createElement("option");
 
 
-        workTechnician.appendChild(option1);
+            option.value = technician;
+
+            option.textContent = technician;
 
 
-        let option2 =
-            document.createElement("option");
+            select.appendChild(option);
 
-
-        option2.value = technician;
-
-        option2.textContent = technician;
-
-
-        weeklyTechnician.appendChild(option2);
+        });
 
     });
 
@@ -1992,22 +2000,18 @@ function loadTechnicians(){
 
 
 /* =========================================================
-   GET GROUP
+   GROUP MACHINES
 ========================================================= */
 
 function getGroupMachines(group){
 
     if(group === "Group 1"){
-
         return group1;
-
     }
 
 
     if(group === "Group 2"){
-
         return group2;
-
     }
 
 
@@ -2039,13 +2043,10 @@ function updateAnnualPM(){
 
     document.getElementById(
         "annualMachineSelect"
-    ).innerHTML = `
-
-        <option value="">
-            -- Select Machine --
-        </option>
-
-    `;
+    ).innerHTML =
+    `<option value="">
+        -- Select Machine --
+    </option>`;
 
 
     document.getElementById(
@@ -2058,7 +2059,19 @@ function updateAnnualPM(){
         document.getElementById(
             "annualInfo"
         ).innerHTML =
-            "Select a month.";
+        "Select a month.";
+
+        return;
+
+    }
+
+
+    if(!group){
+
+        document.getElementById(
+            "annualInfo"
+        ).innerHTML =
+        "No PM group assigned to this month.";
 
         return;
 
@@ -2067,13 +2080,10 @@ function updateAnnualPM(){
 
     document.getElementById(
         "annualInfo"
-    ).innerHTML = `
-
-        <strong>${escapeHTML(month)}</strong>
-        is assigned to
-        <strong>${escapeHTML(group)}</strong>.
-
-    `;
+    ).innerHTML =
+    `<strong>${month}</strong>
+     is assigned to
+     <strong>${group}</strong>.`;
 
 
     displayAnnualMachines();
@@ -2095,20 +2105,17 @@ function displayAnnualMachines(){
         );
 
 
+    select.innerHTML =
+    `<option value="">
+        -- Select Machine --
+    </option>`;
+
+
     const machines =
         getGroupMachines(group);
 
 
-    select.innerHTML = `
-
-        <option value="">
-            -- Select Machine --
-        </option>
-
-    `;
-
-
-    machines.forEach(function(machine){
+    machines.forEach(machine=>{
 
         const option =
             document.createElement("option");
@@ -2124,19 +2131,20 @@ function displayAnnualMachines(){
     });
 
 
-    if(machines.length > 0){
+    if(machines.length){
 
-        const all =
+        const allOption =
             document.createElement("option");
 
 
-        all.value = "ALL";
+        allOption.value = "ALL";
 
-        all.textContent = "All Machines";
+        allOption.textContent =
+            "All Machines";
 
 
         select.insertBefore(
-            all,
+            allOption,
             select.options[1]
         );
 
@@ -2169,48 +2177,49 @@ function displayAnnualMachinesCards(){
     container.innerHTML = "";
 
 
-    machines.forEach(function(machine,index){
+    machines.forEach(
+        (machine,index)=>{
 
-        const card =
-            document.createElement("div");
-
-
-        card.className =
-            "machine-card";
+            const card =
+                document.createElement("div");
 
 
-        card.innerHTML = `
-
-            <h4>
-                ${escapeHTML(machine)}
-            </h4>
-
-            <p>
-                Group:
-                ${escapeHTML(group)}
-            </p>
-
-            <p>
-                Annual Preventive Maintenance
-            </p>
-
-            <span class="pm-badge">
-                Scheduled
-            </span>
-
-        `;
+            card.className =
+                "machine-card";
 
 
-        container.appendChild(card);
+            card.innerHTML = `
 
-    });
+                <h4>
+                    ${escapeHTML(machine)}
+                </h4>
+
+                <p>
+                    PM Group: ${escapeHTML(group)}
+                </p>
+
+                <p>
+                    Annual PM Machine ${index + 1}
+                </p>
+
+                <span class="pm-badge">
+                    Preventive Maintenance
+                </span>
+
+            `;
+
+
+            container.appendChild(card);
+
+        }
+    );
 
 }
 
 
 function displayAnnualMachine(){
 
-    const machine =
+    const selected =
         document.getElementById(
             "annualMachineSelect"
         ).value;
@@ -2222,7 +2231,14 @@ function displayAnnualMachine(){
         ).value;
 
 
-    if(!machine || machine === "ALL"){
+    const container =
+        document.getElementById(
+            "annualMachineDisplay"
+        );
+
+
+    if(!selected ||
+       selected === "ALL"){
 
         displayAnnualMachinesCards();
 
@@ -2231,19 +2247,16 @@ function displayAnnualMachine(){
     }
 
 
-    document.getElementById(
-        "annualMachineDisplay"
-    ).innerHTML = `
+    container.innerHTML = `
 
         <div class="machine-card">
 
             <h4>
-                ${escapeHTML(machine)}
+                ${escapeHTML(selected)}
             </h4>
 
             <p>
-                Group:
-                ${escapeHTML(group)}
+                PM Group: ${escapeHTML(group)}
             </p>
 
             <p>
@@ -2283,13 +2296,37 @@ function updateMonthlyPM(){
 
 
     document.getElementById(
+        "monthlyMachineSelect"
+    ).innerHTML =
+    `<option value="">
+        -- Select Machine --
+    </option>`;
+
+
+    if(!month){
+
+        document.getElementById(
+            "monthlyInfo"
+        ).innerHTML =
+        "Select a month.";
+
+
+        document.getElementById(
+            "monthlyTableContainer"
+        ).innerHTML = "";
+
+
+        return;
+
+    }
+
+
+    document.getElementById(
         "monthlyInfo"
     ).innerHTML =
-        month
-        ? `<strong>${escapeHTML(month)}</strong>
-           is assigned to
-           <strong>${escapeHTML(group)}</strong>.`
-        : "Select a month.";
+    `<strong>${month}</strong>
+     is assigned to
+     <strong>${group}</strong>.`;
 
 
     displayMonthlyMachines();
@@ -2311,20 +2348,17 @@ function displayMonthlyMachines(){
         );
 
 
+    select.innerHTML =
+    `<option value="">
+        -- Select Machine --
+    </option>`;
+
+
     const machines =
         getGroupMachines(group);
 
 
-    select.innerHTML = `
-
-        <option value="">
-            -- Select Machine --
-        </option>
-
-    `;
-
-
-    machines.forEach(function(machine){
+    machines.forEach(machine=>{
 
         const option =
             document.createElement("option");
@@ -2342,17 +2376,18 @@ function displayMonthlyMachines(){
 
     if(machines.length){
 
-        const all =
+        const allOption =
             document.createElement("option");
 
 
-        all.value = "ALL";
+        allOption.value = "ALL";
 
-        all.textContent = "All Machines";
+        allOption.textContent =
+            "All Machines";
 
 
         select.insertBefore(
-            all,
+            allOption,
             select.options[1]
         );
 
@@ -2405,15 +2440,15 @@ function displayMonthlyMachinesTable(){
 
         <tr>
 
-            <th>No.</th>
+        <th>No.</th>
 
-            <th>Machine</th>
+        <th>Machine</th>
 
-            <th>Month</th>
+        <th>Month</th>
 
-            <th>PM Group</th>
+        <th>PM Group</th>
 
-            <th>Maintenance</th>
+        <th>Maintenance</th>
 
         </tr>
 
@@ -2424,43 +2459,45 @@ function displayMonthlyMachinesTable(){
     `;
 
 
-    machines.forEach(function(machine,index){
+    machines.forEach(
+        (machine,index)=>{
 
-        html += `
+            html += `
 
-            <tr>
+                <tr>
 
-                <td>
-                    ${index + 1}
-                </td>
+                    <td>
+                        ${index + 1}
+                    </td>
 
-                <td>
-                    <strong>
-                        ${escapeHTML(machine)}
-                    </strong>
-                </td>
+                    <td>
+                        <strong>
+                            ${escapeHTML(machine)}
+                        </strong>
+                    </td>
 
-                <td>
-                    ${escapeHTML(month)}
-                </td>
+                    <td>
+                        ${escapeHTML(month)}
+                    </td>
 
-                <td>
-                    ${escapeHTML(group)}
-                </td>
+                    <td>
+                        ${escapeHTML(group)}
+                    </td>
 
-                <td>
+                    <td>
 
-                    <span class="pm-badge">
-                        Monthly PM
-                    </span>
+                        <span class="pm-badge">
+                            Monthly PM
+                        </span>
 
-                </td>
+                    </td>
 
-            </tr>
+                </tr>
 
-        `;
+            `;
 
-    });
+        }
+    );
 
 
     html += `
@@ -2479,21 +2516,6 @@ function displayMonthlyMachinesTable(){
 
 function displayMonthlyMachine(){
 
-    const machine =
-        document.getElementById(
-            "monthlyMachineSelect"
-        ).value;
-
-
-    if(!machine || machine === "ALL"){
-
-        displayMonthlyMachinesTable();
-
-        return;
-
-    }
-
-
     const month =
         document.getElementById(
             "monthlyMonthSelect"
@@ -2506,6 +2528,22 @@ function displayMonthlyMachine(){
         ).value;
 
 
+    const machine =
+        document.getElementById(
+            "monthlyMachineSelect"
+        ).value;
+
+
+    if(!machine ||
+       machine === "ALL"){
+
+        displayMonthlyMachinesTable();
+
+        return;
+
+    }
+
+
     document.getElementById(
         "monthlyTableContainer"
     ).innerHTML = `
@@ -2516,15 +2554,15 @@ function displayMonthlyMachine(){
 
         <tr>
 
-            <th>No.</th>
+        <th>No.</th>
 
-            <th>Machine</th>
+        <th>Machine</th>
 
-            <th>Month</th>
+        <th>Month</th>
 
-            <th>PM Group</th>
+        <th>PM Group</th>
 
-            <th>Maintenance</th>
+        <th>Maintenance</th>
 
         </tr>
 
@@ -2534,9 +2572,7 @@ function displayMonthlyMachine(){
 
         <tr>
 
-            <td>
-                1
-            </td>
+            <td>1</td>
 
             <td>
                 <strong>
@@ -2604,7 +2640,7 @@ function updateWeeklyPM(){
     if(!month || !week){
 
         info.innerHTML =
-            "Select a month and Week 1–4.";
+        "Select a month and Week 1, Week 2, Week 3 or Week 4.";
 
         container.innerHTML = "";
 
@@ -2617,6 +2653,18 @@ function updateWeeklyPM(){
         monthGroup[month];
 
 
+    if(!group){
+
+        info.innerHTML =
+        "No PM group assigned to this month.";
+
+        container.innerHTML = "";
+
+        return;
+
+    }
+
+
     const machines =
         getGroupMachines(group);
 
@@ -2626,14 +2674,10 @@ function updateWeeklyPM(){
 
 
     const selectedMachines =
-        machines.filter(function(machine,index){
-
-            return (
-                index % 4 ===
-                weekNumber - 1
-            );
-
-        });
+        machines.filter(
+            (machine,index)=>
+            index % 4 === weekNumber - 1
+        );
 
 
     const days = [
@@ -2650,21 +2694,14 @@ function updateWeeklyPM(){
 
     info.innerHTML = `
 
-        <strong>
-            ${escapeHTML(month)}
-        </strong>
-
+        <strong>${escapeHTML(month)}</strong>
         |
-
-        <strong>
-            ${escapeHTML(group)}
-        </strong>
-
+        <strong>${escapeHTML(group)}</strong>
         |
-
-        <strong>
-            Week ${weekNumber}
-        </strong>
+        <strong>Week ${weekNumber}</strong>
+        |
+        ${selectedMachines.length}
+        machines assigned
 
     `;
 
@@ -2677,19 +2714,19 @@ function updateWeeklyPM(){
 
         <tr>
 
-            <th>No.</th>
+        <th>No.</th>
 
-            <th>Machine</th>
+        <th>Machine</th>
 
-            <th>Week</th>
+        <th>Week</th>
 
-            <th>Maintenance Day</th>
+        <th>Maintenance Day</th>
 
-            <th>PM Group</th>
+        <th>PM Group</th>
 
-            <th>Technician</th>
+        <th>Technician</th>
 
-            <th>Status</th>
+        <th>Status</th>
 
         </tr>
 
@@ -2700,81 +2737,81 @@ function updateWeeklyPM(){
     `;
 
 
-    selectedMachines.forEach(function(machine,index){
+    selectedMachines.forEach(
+        (machine,index)=>{
 
-        const day =
-            days[index % days.length];
+            const day =
+                days[index % days.length];
 
 
-        html += `
+            html += `
 
-            <tr>
+                <tr>
 
-                <td>
-                    ${index + 1}
-                </td>
+                    <td>
+                        ${index + 1}
+                    </td>
 
-                <td>
-                    <strong>
-                        ${escapeHTML(machine)}
-                    </strong>
-                </td>
+                    <td>
+                        <strong>
+                            ${escapeHTML(machine)}
+                        </strong>
+                    </td>
 
-                <td>
+                    <td>
 
-                    <span class="week-label">
-                        Week ${weekNumber}
-                    </span>
+                        <span class="week-label">
+                            Week ${weekNumber}
+                        </span>
 
-                </td>
+                    </td>
 
-                <td>
+                    <td>
 
-                    <span class="day-label">
-                        ${day}
-                    </span>
+                        <span class="day-label">
+                            ${day}
+                        </span>
 
-                </td>
+                    </td>
 
-                <td>
-                    ${escapeHTML(group)}
-                </td>
+                    <td>
+                        ${escapeHTML(group)}
+                    </td>
 
-                <td>
+                    <td>
 
-                    <select>
+                        <select
+                        style="min-width:180px">
 
-                        <option>
-                            -- Select Technician --
-                        </option>
+                            <option value="">
+                                -- Select Technician --
+                            </option>
 
-                        ${technicians.map(function(t){
+                            ${technicians.map(
+                                technician=>
+                                `<option value="${escapeHTML(technician)}">
+                                    ${escapeHTML(technician)}
+                                </option>`
+                            ).join("")}
 
-                            return `
-                                <option>
-                                    ${escapeHTML(t)}
-                                </option>
-                            `;
+                        </select>
 
-                        }).join("")}
+                    </td>
 
-                    </select>
+                    <td>
 
-                </td>
+                        <span class="status-badge">
+                            Planned
+                        </span>
 
-                <td>
+                    </td>
 
-                    <span class="status-badge">
-                        Planned
-                    </span>
+                </tr>
 
-                </td>
+            `;
 
-            </tr>
-
-        `;
-
-    });
+        }
+    );
 
 
     html += `
@@ -2792,7 +2829,7 @@ function updateWeeklyPM(){
 
 
 /* =========================================================
-   DATE AND TIME
+   CURRENT DATE AND TIME
 ========================================================= */
 
 function setCurrentDateTime(){
@@ -2801,29 +2838,18 @@ function setCurrentDateTime(){
         new Date();
 
 
-    const year =
-        now.getFullYear();
+    const date =
+        now.toISOString()
+        .split("T")[0];
 
 
-    const month =
-        String(
-            now.getMonth() + 1
-        ).padStart(2,"0");
-
-
-    const day =
-        String(
-            now.getDate()
-        ).padStart(2,"0");
-
-
-    const hour =
+    const hours =
         String(
             now.getHours()
         ).padStart(2,"0");
 
 
-    const minute =
+    const minutes =
         String(
             now.getMinutes()
         ).padStart(2,"0");
@@ -2831,17 +2857,13 @@ function setCurrentDateTime(){
 
     document.getElementById(
         "workDate"
-    ).value =
-        year + "-" +
-        month + "-" +
-        day;
+    ).value = date;
 
 
     document.getElementById(
         "workTime"
     ).value =
-        hour + ":" +
-        minute;
+    `${hours}:${minutes}`;
 
 }
 
@@ -2861,7 +2883,10 @@ function getDailyRecords(){
         ) || [];
 
     }
+
     catch(error){
+
+        console.error(error);
 
         return [];
 
@@ -2929,18 +2954,14 @@ document
         };
 
 
-        if(
-            !record.date ||
-            !record.time ||
-            !record.equipment ||
-            !record.technician ||
-            !record.workType ||
-            !record.priority ||
-            !record.description
-        ){
+        /* -------------------------------------------------
+           VALIDATE
+        ------------------------------------------------- */
+
+        if(!record.equipment){
 
             alert(
-                "Please complete all fields."
+                "Please select Equipment."
             );
 
             return;
@@ -2948,7 +2969,31 @@ document
         }
 
 
-        /* SAVE LOCAL */
+        if(!record.workType){
+
+            alert(
+                "Please select Work Type."
+            );
+
+            return;
+
+        }
+
+
+        if(!record.technician){
+
+            alert(
+                "Please select Assigned Technician."
+            );
+
+            return;
+
+        }
+
+
+        /* -------------------------------------------------
+           SAVE LOCAL
+        ------------------------------------------------- */
 
         let records =
             getDailyRecords();
@@ -2970,13 +3015,15 @@ document
         displayDailyRecords();
 
 
-        /* SEND GOOGLE SHEETS */
+        /* -------------------------------------------------
+           SAVE GOOGLE SHEETS
+        ------------------------------------------------- */
 
         saveToGoogleSheets(record);
 
 
         alert(
-            "Daily maintenance work saved."
+            "Daily maintenance work saved successfully."
         );
 
 
@@ -3008,8 +3055,8 @@ function displayDailyRecords(){
 
             <div class="empty">
 
-                No daily maintenance
-                records yet.
+                No daily maintenance records
+                have been saved yet.
 
             </div>
 
@@ -3028,23 +3075,23 @@ function displayDailyRecords(){
 
         <tr>
 
-            <th>No.</th>
+        <th>No.</th>
 
-            <th>Date</th>
+        <th>Date</th>
 
-            <th>Time</th>
+        <th>Time</th>
 
-            <th>Equipment</th>
+        <th>Equipment</th>
 
-            <th>Technician</th>
+        <th>Technician</th>
 
-            <th>Work Type</th>
+        <th>Work Type</th>
 
-            <th>Priority</th>
+        <th>Priority</th>
 
-            <th>Description</th>
+        <th>Description</th>
 
-            <th>Action</th>
+        <th>Action</th>
 
         </tr>
 
@@ -3055,92 +3102,92 @@ function displayDailyRecords(){
     `;
 
 
-    records.forEach(function(record,index){
+    records.forEach(
+        (record,index)=>{
 
-        let priorityClass = "";
-
-
-        if(record.priority === "High"){
-
-            priorityClass =
-                "priority-high";
-
-        }
+            let priorityClass = "";
 
 
-        if(record.priority === "Medium"){
+            if(record.priority === "High"){
 
-            priorityClass =
-                "priority-medium";
+                priorityClass =
+                    "priority-high";
 
-        }
-
-
-        if(record.priority === "Low"){
-
-            priorityClass =
-                "priority-low";
-
-        }
+            }
 
 
-        html += `
+            if(record.priority === "Medium"){
 
-            <tr>
+                priorityClass =
+                    "priority-medium";
 
-                <td>
-                    ${index + 1}
-                </td>
+            }
 
-                <td>
-                    ${escapeHTML(record.date)}
-                </td>
 
-                <td>
-                    ${escapeHTML(record.time)}
-                </td>
+            if(record.priority === "Low"){
 
-                <td>
-                    <strong>
-                        ${escapeHTML(record.equipment)}
-                    </strong>
-                </td>
+                priorityClass =
+                    "priority-low";
 
-                <td>
-                    ${escapeHTML(record.technician)}
-                </td>
+            }
 
-                <td>
-                    <strong>
+
+            html += `
+
+                <tr>
+
+                    <td>
+                        ${index + 1}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(record.date)}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(record.time)}
+                    </td>
+
+                    <td>
+                        <strong>
+                            ${escapeHTML(record.equipment)}
+                        </strong>
+                    </td>
+
+                    <td>
+                        ${escapeHTML(record.technician)}
+                    </td>
+
+                    <td>
                         ${escapeHTML(record.workType)}
-                    </strong>
-                </td>
+                    </td>
 
-                <td class="${priorityClass}">
-                    ${escapeHTML(record.priority)}
-                </td>
+                    <td class="${priorityClass}">
+                        ${escapeHTML(record.priority)}
+                    </td>
 
-                <td>
-                    ${escapeHTML(record.description)}
-                </td>
+                    <td>
+                        ${escapeHTML(record.description)}
+                    </td>
 
-                <td>
+                    <td>
 
-                    <button
-                    class="delete-btn"
-                    onclick="deleteDailyRecord(${record.id})">
+                        <button
+                        class="delete-btn"
+                        onclick="deleteDailyRecord(${record.id})">
 
-                        Delete
+                            Delete
 
-                    </button>
+                        </button>
 
-                </td>
+                    </td>
 
-            </tr>
+                </tr>
 
-        `;
+            `;
 
-    });
+        }
+    );
 
 
     html += `
@@ -3163,11 +3210,9 @@ function displayDailyRecords(){
 
 function deleteDailyRecord(id){
 
-    if(
-        !confirm(
-            "Delete this maintenance record?"
-        )
-    ){
+    if(!confirm(
+        "Delete this maintenance record?"
+    )){
 
         return;
 
@@ -3179,11 +3224,10 @@ function deleteDailyRecord(id){
 
 
     records =
-        records.filter(function(record){
-
-            return record.id !== id;
-
-        });
+        records.filter(
+            record =>
+            record.id !== id
+        );
 
 
     localStorage.setItem(
@@ -3204,9 +3248,7 @@ function deleteDailyRecord(id){
 function clearDailyForm(){
 
     document
-        .getElementById(
-            "dailyWorkForm"
-        )
+        .getElementById("dailyWorkForm")
         .reset();
 
 
@@ -3217,6 +3259,7 @@ function clearDailyForm(){
 
 /* =========================================================
    GOOGLE SHEETS
+   CORRECTED VERSION
 ========================================================= */
 
 function saveToGoogleSheets(record){
@@ -3227,34 +3270,21 @@ function saveToGoogleSheets(record){
         );
 
 
-    /* CHECK URL */
+    /* -----------------------------------------------------
+       SHOW SENDING STATUS
+    ----------------------------------------------------- */
 
-    if(
-        GOOGLE_SCRIPT_URL ===
-        "https://script.google.com/macros/s/AKfycbyQ3HhWaqkzdszEeQ6kK85nbPLUkMrcXd3EynakhQjtIZeuFWBWn7p2_95XiwAbn0Bs/exec"
-    ){
-
-        status.className =
-            "google-status error";
+    status.className =
+        "google-status sending";
 
 
-        status.innerHTML =
-            "✗ Google Apps Script URL has not been entered.";
+    status.innerHTML =
+        "⏳ Sending record to Google Sheets...";
 
 
-        console.error(
-            "Google Apps Script URL is missing."
-        );
-
-
-        return;
-
-    }
-
-
-    /* =====================================================
-       FORM DATA
-    ===================================================== */
+    /* -----------------------------------------------------
+       CREATE FORM DATA
+    ----------------------------------------------------- */
 
     const formData =
         new URLSearchParams();
@@ -3308,57 +3338,60 @@ function saveToGoogleSheets(record){
     );
 
 
-    console.log(
-        "================================"
-    );
+    /* -----------------------------------------------------
+       DEBUG
+    ----------------------------------------------------- */
 
     console.log(
-        "GOOGLE SHEETS DATA"
+        "Google Sheets data:"
     );
+
 
     console.log(
         "Date:",
         record.date
     );
 
+
     console.log(
         "Time:",
         record.time
     );
+
 
     console.log(
         "Equipment:",
         record.equipment
     );
 
+
     console.log(
         "Technician:",
         record.technician
     );
+
 
     console.log(
         "Work Type:",
         record.workType
     );
 
+
     console.log(
         "Priority:",
         record.priority
     );
+
 
     console.log(
         "Description:",
         record.description
     );
 
-    console.log(
-        "================================"
-    );
 
-
-    /* =====================================================
-       SEND
-    ===================================================== */
+    /* -----------------------------------------------------
+       SEND TO GOOGLE APPS SCRIPT
+    ----------------------------------------------------- */
 
     fetch(
         GOOGLE_SCRIPT_URL,
@@ -3381,21 +3414,42 @@ function saveToGoogleSheets(record){
         }
     )
 
+
     .then(function(){
+
+        /*
+           no-cors does not allow the browser
+           to read the Apps Script response.
+           Therefore this means the request
+           was sent without a browser fetch error.
+        */
 
         status.className =
             "google-status success";
 
 
         status.innerHTML =
-            "✓ Guddaa Galatoomaa";
+            "✓ Daily maintenance data sent to Google Sheets.";
+
+
+        console.log(
+            "Equipment sent:",
+            record.equipment
+        );
+
+
+        console.log(
+            "Work Type sent:",
+            record.workType
+        );
 
     })
+
 
     .catch(function(error){
 
         console.error(
-            "Hin ergamne:",
+            "Google Sheets error:",
             error
         );
 
@@ -3405,7 +3459,7 @@ function saveToGoogleSheets(record){
 
 
         status.innerHTML =
-            "Hin Ergamne.";
+            "✗ Google Sheets connection failed.";
 
     });
 
@@ -3413,7 +3467,7 @@ function saveToGoogleSheets(record){
 
 
 /* =========================================================
-   NOTIFICATION
+   NOTIFICATIONS
 ========================================================= */
 
 function updateNotificationStatus(){
@@ -3424,38 +3478,30 @@ function updateNotificationStatus(){
         );
 
 
-    if(
-        !("Notification" in window)
-    ){
+    if(!("Notification" in window)){
 
         status.innerHTML =
-            "Notifications are not supported.";
+        "Browser notifications are not supported.";
 
         return;
 
     }
 
 
-    if(
-        Notification.permission ===
-        "granted"
-    ){
+    if(Notification.permission === "granted"){
 
         status.innerHTML =
-            "Notifications are enabled.";
+        "Notifications are enabled.";
 
         return;
 
     }
 
 
-    if(
-        Notification.permission ===
-        "denied"
-    ){
+    if(Notification.permission === "denied"){
 
         status.innerHTML =
-            "Notifications are blocked.";
+        "Notifications are blocked. Please allow them in browser settings.";
 
         return;
 
@@ -3463,19 +3509,17 @@ function updateNotificationStatus(){
 
 
     status.innerHTML =
-        "Notifications are not enabled.";
+    "Notifications have not been enabled yet.";
 
 }
 
 
 async function enableNotifications(){
 
-    if(
-        !("Notification" in window)
-    ){
+    if(!("Notification" in window)){
 
         alert(
-            "Notifications are not supported."
+            "This browser does not support notifications."
         );
 
         return;
@@ -3495,10 +3539,8 @@ async function enableNotifications(){
         new Notification(
             "MELBA Maintenance System",
             {
-
                 body:
-                "Maintenance notifications are enabled."
-
+                "Maintenance notifications are now enabled."
             }
         );
 
@@ -3509,12 +3551,10 @@ async function enableNotifications(){
 
 function testNotification(){
 
-    if(
-        !("Notification" in window)
-    ){
+    if(!("Notification" in window)){
 
         alert(
-            "Notifications are not supported."
+            "This browser does not support notifications."
         );
 
         return;
@@ -3537,12 +3577,10 @@ function testNotification(){
 
 
     new Notification(
-        "MELBA Maintenance",
+        "MELBA Maintenance Reminder",
         {
-
             body:
             "This is a test maintenance notification."
-
         }
     );
 
@@ -3550,7 +3588,7 @@ function testNotification(){
 
 
 /* =========================================================
-   SECURITY / HTML ESCAPE
+   ESCAPE HTML
 ========================================================= */
 
 function escapeHTML(value){
@@ -3567,36 +3605,21 @@ function escapeHTML(value){
 
     return String(value)
 
-        .replace(
-            /&/g,
-            "&amp;"
-        )
+        .replace(/&/g,"&amp;")
 
-        .replace(
-            /</g,
-            "&lt;"
-        )
+        .replace(/</g,"&lt;")
 
-        .replace(
-            />/g,
-            "&gt;"
-        )
+        .replace(/>/g,"&gt;")
 
-        .replace(
-            /"/g,
-            "&quot;"
-        )
+        .replace(/"/g,"&quot;")
 
-        .replace(
-            /'/g,
-            "&#039;"
-        );
+        .replace(/'/g,"&#039;");
 
 }
 
 
 /* =========================================================
-   INITIALIZE
+   INITIALIZATION
 ========================================================= */
 
 function initialize(){
@@ -3618,12 +3641,12 @@ function initialize(){
 }
 
 
+/* =========================================================
+   START SYSTEM
+========================================================= */
+
 initialize();
 
-
-/* =========================================================
-   CLOCK
-========================================================= */
 
 setInterval(
     updateClock,
@@ -3633,5 +3656,4 @@ setInterval(
 </script>
 
 </body>
-
 </html>
