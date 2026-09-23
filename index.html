@@ -3231,7 +3231,7 @@ function saveToGoogleSheets(record){
 
     if(
         GOOGLE_SCRIPT_URL ===
-        "YOUR_GOOGLE_APPS_SCRIPT_EXEC_URL"
+        "https://script.google.com/macros/s/AKfycbyQ3HhWaqkzdszEeQ6kK85nbPLUkMrcXd3EynakhQjtIZeuFWBWn7p2_95XiwAbn0Bs/exec"
     ){
 
         status.className =
@@ -3388,14 +3388,14 @@ function saveToGoogleSheets(record){
 
 
         status.innerHTML =
-            "✓ Data sent to Google Sheets.";
+            "✓ Guddaa Galatoomaa";
 
     })
 
     .catch(function(error){
 
         console.error(
-            "Google Sheets error:",
+            "Hin ergamne:",
             error
         );
 
@@ -3405,7 +3405,7 @@ function saveToGoogleSheets(record){
 
 
         status.innerHTML =
-            "✗ Google Sheets connection failed.";
+            "Hin Ergamne.";
 
     });
 
