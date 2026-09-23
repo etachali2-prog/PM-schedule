@@ -1,9 +1,12 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>
 MELBA PRINTING PUBLISHING & PACKAGING SC. - Technical Maintenance
@@ -30,81 +33,49 @@ body{
     color:#243447;
 }
 
-button,
-input,
-select,
-textarea{
-    font-family:inherit;
-}
-
-button{
-    cursor:pointer;
-}
-
-.container{
-    width:94%;
-    max-width:1500px;
-    margin:auto;
-}
-
-
 /* =========================================================
    HEADER
 ========================================================= */
 
 header{
-    background:linear-gradient(135deg,#0d3554,#164e78);
+    background:linear-gradient(135deg,#164e78,#0d3554);
     color:white;
-    padding:22px 0;
+    padding:20px;
+    text-align:center;
     box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
-.header-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-}
-
-.company-title h1{
+header h1{
     margin:0;
     font-size:25px;
-    letter-spacing:.3px;
 }
 
-.company-title p{
+header h2{
     margin:7px 0 0;
-    font-size:14px;
-    opacity:.9;
+    font-size:17px;
+    font-weight:normal;
 }
 
-.header-right{
-    text-align:right;
-}
-
-.system-status{
-    display:inline-flex;
+.header-info{
+    margin-top:12px;
+    display:flex;
+    justify-content:center;
     align-items:center;
-    gap:7px;
-    background:rgba(255,255,255,.12);
-    padding:7px 12px;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.status{
+    background:#198754;
+    padding:6px 13px;
     border-radius:20px;
-    font-size:12px;
-}
-
-.status-dot{
-    width:9px;
-    height:9px;
-    background:#20c997;
-    border-radius:50%;
-}
-
-.clock{
-    margin-top:8px;
-    font-size:14px;
+    font-size:13px;
     font-weight:bold;
 }
 
+.clock{
+    font-size:14px;
+}
 
 /* =========================================================
    NAVIGATION
@@ -114,89 +85,58 @@ nav{
     position:sticky;
     top:0;
     z-index:1000;
-    background:white;
-    box-shadow:0 2px 7px rgba(0,0,0,.12);
-}
-
-.nav-container{
+    background:#0d3554;
     display:flex;
-    overflow-x:auto;
+    justify-content:center;
+    flex-wrap:wrap;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
-.nav-btn{
-    border:0;
-    background:white;
-    color:#164e78;
-    padding:15px 18px;
-    font-weight:bold;
-    white-space:nowrap;
-    border-bottom:3px solid transparent;
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:13px 16px;
+    font-size:14px;
     transition:.2s;
 }
 
-.nav-btn:hover{
-    background:#eef3f8;
+nav a:hover{
+    background:#0b7285;
 }
-
-.nav-btn.active{
-    background:#eef3f8;
-    border-bottom-color:#0b7285;
-    color:#0b7285;
-}
-
 
 /* =========================================================
-   MAIN
+   CONTAINER
 ========================================================= */
 
-main{
-    padding:25px 0 40px;
+.container{
+    max-width:1450px;
+    margin:auto;
+    padding:20px;
 }
+
+/* =========================================================
+   SECTION
+========================================================= */
 
 .section{
-    display:none;
-}
-
-.section.active{
-    display:block;
-}
-
-.section-header{
-    margin-bottom:18px;
-}
-
-.section-header h2{
-    margin:0;
-    color:#164e78;
-    font-size:24px;
-}
-
-.section-header p{
-    margin:6px 0 0;
-    color:#6c757d;
-}
-
-
-/* =========================================================
-   CARDS
-========================================================= */
-
-.card{
     background:white;
-    border-radius:12px;
+    margin-bottom:25px;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+.section-title{
+    background:#164e78;
+    color:white;
+    padding:15px 18px;
+    font-size:19px;
+    font-weight:bold;
+}
+
+.section-body{
     padding:20px;
-    margin-bottom:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
 }
-
-.card-title{
-    margin:0 0 16px;
-    color:#164e78;
-    font-size:18px;
-    border-bottom:2px solid #eef3f8;
-    padding-bottom:10px;
-}
-
 
 /* =========================================================
    FORM
@@ -204,7 +144,8 @@ main{
 
 .form-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
 }
 
@@ -213,35 +154,29 @@ main{
     flex-direction:column;
 }
 
-.form-group.full{
-    grid-column:1/-1;
-}
-
 .form-group label{
-    font-size:13px;
     font-weight:bold;
     margin-bottom:6px;
-    color:#243447;
+    font-size:14px;
 }
 
 input,
 select,
 textarea{
     width:100%;
-    border:1px solid #dce3ea;
-    border-radius:7px;
-    padding:11px 12px;
-    background:white;
-    color:#243447;
+    padding:10px 12px;
+    border:1px solid #cbd5df;
+    border-radius:6px;
+    font-size:14px;
     outline:none;
-    transition:.2s;
+    background:white;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
     border-color:#0b7285;
-    box-shadow:0 0 0 3px rgba(11,114,133,.1);
+    box-shadow:0 0 0 2px rgba(11,114,133,.1);
 }
 
 textarea{
@@ -249,340 +184,255 @@ textarea{
     resize:vertical;
 }
 
-
 /* =========================================================
    BUTTONS
 ========================================================= */
 
-.btn{
-    border:0;
-    border-radius:7px;
-    padding:11px 17px;
-    font-weight:bold;
-    color:white;
-    transition:.2s;
+.button-row{
+    margin-top:18px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
-.btn:hover{
-    transform:translateY(-1px);
-    opacity:.92;
+button{
+    border:none;
+    border-radius:6px;
+    padding:10px 17px;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .btn-primary{
     background:#164e78;
+    color:white;
 }
 
-.btn-info{
-    background:#0b7285;
+.btn-primary:hover{
+    background:#0d3554;
 }
 
 .btn-success{
     background:#198754;
+    color:white;
 }
 
 .btn-warning{
     background:#f59f00;
-    color:#222;
+    color:white;
 }
 
 .btn-danger{
     background:#dc3545;
+    color:white;
 }
 
-.btn-secondary{
-    background:#6c757d;
+.btn-info{
+    background:#0b7285;
+    color:white;
 }
-
-.button-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:15px;
-}
-
 
 /* =========================================================
-   EQUIPMENT TABLE
+   TABLE
 ========================================================= */
 
-.search-box{
-    max-width:450px;
-    margin-bottom:15px;
-}
-
 .table-container{
+    width:100%;
     overflow-x:auto;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:700px;
+    min-width:800px;
 }
 
-thead{
+th{
     background:#164e78;
     color:white;
-}
-
-th,
-td{
-    padding:11px 10px;
-    border-bottom:1px solid #dce3ea;
+    padding:11px;
     text-align:left;
     font-size:13px;
 }
 
-tbody tr:hover{
-    background:#f7fafc;
+td{
+    padding:10px;
+    border-bottom:1px solid #dce3ea;
+    font-size:13px;
 }
 
-.machine-number{
-    width:55px;
-    text-align:center;
-    font-weight:bold;
+tr:nth-child(even){
+    background:#f8fafc;
 }
 
+tr:hover{
+    background:#eef7fb;
+}
 
 /* =========================================================
    SELECTION PANEL
 ========================================================= */
 
-.selection-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
+.selection-panel{
+    background:#f5f8fb;
+    border:1px solid #dce3ea;
+    border-radius:8px;
+    padding:15px;
+    margin-bottom:18px;
 }
 
-.selection-info{
+.selection-title{
+    font-weight:bold;
+    color:#164e78;
+    margin-bottom:12px;
+}
+
+.selection-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+}
+
+/* =========================================================
+   MACHINE RESULT
+========================================================= */
+
+.machine-result{
     margin-top:18px;
-    background:#eef7fb;
-    border-left:4px solid #0b7285;
-    padding:13px 15px;
+}
+
+.result-header{
+    background:#0b7285;
+    color:white;
+    padding:11px;
+    border-radius:6px 6px 0 0;
+    font-weight:bold;
+}
+
+.empty-message{
+    padding:25px;
+    text-align:center;
+    color:#6c757d;
+    background:#f8fafc;
+    border:1px solid #dce3ea;
     border-radius:6px;
 }
 
-.selection-info strong{
-    color:#164e78;
-}
-
-
 /* =========================================================
-   PM MACHINE CARDS
+   BADGES
 ========================================================= */
 
-.machine-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    margin-top:20px;
+.badge{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:12px;
+    font-size:11px;
+    font-weight:bold;
 }
 
-.machine-card{
-    border:1px solid #dce3ea;
-    border-radius:9px;
-    padding:15px;
-    background:#fff;
-    transition:.2s;
-}
-
-.machine-card:hover{
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-    transform:translateY(-2px);
-}
-
-.machine-card h4{
-    margin:0 0 8px;
+.badge-production{
+    background:#dbeafe;
     color:#164e78;
 }
 
-.machine-card p{
-    margin:5px 0;
-    color:#6c757d;
-    font-size:13px;
+.badge-utility{
+    background:#fff3cd;
+    color:#856404;
 }
 
-.pm-badge{
-    display:inline-block;
-    padding:5px 9px;
-    border-radius:20px;
-    background:#e7f5ff;
-    color:#0b7285;
-    font-size:11px;
-    font-weight:bold;
-    margin-top:7px;
+.badge-high{
+    background:#f8d7da;
+    color:#842029;
 }
 
+.badge-medium{
+    background:#fff3cd;
+    color:#664d03;
+}
+
+.badge-low{
+    background:#d1e7dd;
+    color:#0f5132;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box{
+    margin-bottom:15px;
+}
 
 /* =========================================================
    DAILY WORK
 ========================================================= */
 
-.priority-high{
-    color:#dc3545;
-    font-weight:bold;
+.full-width{
+    grid-column:1 / -1;
 }
-
-.priority-medium{
-    color:#f59f00;
-    font-weight:bold;
-}
-
-.priority-low{
-    color:#198754;
-    font-weight:bold;
-}
-
-.status-badge{
-    display:inline-block;
-    padding:5px 9px;
-    border-radius:15px;
-    font-size:11px;
-    font-weight:bold;
-    background:#e8f5e9;
-    color:#198754;
-}
-
-.delete-btn{
-    border:0;
-    background:#dc3545;
-    color:white;
-    border-radius:5px;
-    padding:6px 9px;
-    font-size:11px;
-}
-
-
-/* =========================================================
-   WEEKLY TABLE
-========================================================= */
-
-.week-label{
-    display:inline-block;
-    background:#164e78;
-    color:white;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-.day-label{
-    display:inline-block;
-    background:#eef3f8;
-    color:#164e78;
-    padding:5px 9px;
-    border-radius:15px;
-    font-size:11px;
-    font-weight:bold;
-}
-
 
 /* =========================================================
    NOTIFICATION
 ========================================================= */
 
 .notification-box{
-    background:#f8f9fa;
-    border:1px solid #dce3ea;
-    border-radius:10px;
     padding:20px;
+    background:#f8fafc;
+    border:1px solid #dce3ea;
+    border-radius:8px;
 }
 
 .notification-status{
-    margin-top:15px;
-    padding:12px;
-    border-radius:7px;
-    background:#eef3f8;
+    margin-bottom:12px;
+    font-weight:bold;
 }
-
-
-/* =========================================================
-   EMPTY STATE
-========================================================= */
-
-.empty{
-    text-align:center;
-    padding:30px;
-    color:#6c757d;
-    background:#f8f9fa;
-    border-radius:8px;
-    margin-top:15px;
-}
-
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer{
+    text-align:center;
     background:#0d3554;
     color:white;
-    text-align:center;
     padding:18px;
-    font-size:12px;
+    font-size:13px;
+    margin-top:20px;
 }
-
-footer strong{
-    color:#fff;
-}
-
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:1100px){
-
-    .form-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .selection-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .machine-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
 @media(max-width:700px){
 
-    .header-content{
-        flex-direction:column;
-        align-items:flex-start;
+    header h1{
+        font-size:19px;
     }
 
-    .header-right{
-        text-align:left;
+    header h2{
+        font-size:14px;
     }
 
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .selection-grid{
-        grid-template-columns:1fr;
-    }
-
-    .machine-grid{
-        grid-template-columns:1fr;
-    }
-
-    .company-title h1{
-        font-size:20px;
-    }
-
-    .nav-btn{
-        padding:13px 12px;
+    nav a{
+        padding:10px;
         font-size:12px;
+    }
+
+    .container{
+        padding:10px;
+    }
+
+    .section-body{
+        padding:12px;
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -595,41 +445,26 @@ footer strong{
 
 <header>
 
-<div class="container">
+    <h1>
+        MELBA PRINTING PUBLISHING & PACKAGING SC.
+    </h1>
 
-<div class="header-content">
+    <h2>
+        Electrical & Mechanical Technical Department
+    </h2>
 
-<div class="company-title">
+    <div class="header-info">
 
-<h1>
-MELBA PRINTING PUBLISHING & PACKAGING SC.
-</h1>
+        <span class="status">
+            SYSTEM ACTIVE
+        </span>
 
-<p>
-Electrical & Mechanical Technical Department
-</p>
+        <span class="clock"
+              id="liveClock">
+            Loading...
+        </span>
 
-</div>
-
-<div class="header-right">
-
-<div class="system-status">
-
-<span class="status-dot"></span>
-
-System Online
-
-</div>
-
-<div class="clock" id="liveClock">
-Loading...
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </header>
 
@@ -640,123 +475,87 @@ Loading...
 
 <nav>
 
-<div class="container nav-container">
+    <a href="#equipment">
+        Equipment
+    </a>
 
-<button
-class="nav-btn active"
-onclick="showSection('equipment',this)">
-Equipment
-</button>
+    <a href="#annualPM">
+        Annual PM
+    </a>
 
-<button
-class="nav-btn"
-onclick="showSection('annualPM',this)">
-Annual PM
-</button>
+    <a href="#monthlyPM">
+        Monthly PM
+    </a>
 
-<button
-class="nav-btn"
-onclick="showSection('monthlyPM',this)">
-Monthly PM
-</button>
+    <a href="#weeklyPM">
+        Weekly PM
+    </a>
 
-<button
-class="nav-btn"
-onclick="showSection('weeklyPM',this)">
-Weekly PM
-</button>
+    <a href="#dailyWork">
+        Daily Work
+    </a>
 
-<button
-class="nav-btn"
-onclick="showSection('dailyWork',this)">
-Daily Work
-</button>
-
-<button
-class="nav-btn"
-onclick="showSection('notification',this)">
-Notification
-</button>
-
-</div>
+    <a href="#notification">
+        Notification
+    </a>
 
 </nav>
 
-
-<!-- =========================================================
-     MAIN
-========================================================= -->
-
-<main>
 
 <div class="container">
 
 
 <!-- =========================================================
-     EQUIPMENT
+     EQUIPMENT REGISTER
 ========================================================= -->
 
-<section
-class="section active"
-id="equipment">
+<section class="section"
+         id="equipment">
 
-<div class="section-header">
+    <div class="section-title">
+        Equipment Register
+    </div>
 
-<h2>Equipment Register</h2>
+    <div class="section-body">
 
-<p>
-Production and utility equipment under the Technical Department.
-</p>
+        <div class="search-box">
 
-</div>
+            <input
+                type="text"
+                id="equipmentSearch"
+                placeholder="Search equipment..."
+                onkeyup="searchEquipment()">
 
-
-<div class="card">
-
-<h3 class="card-title">
-Equipment List
-</h3>
-
-<input
-type="text"
-id="equipmentSearch"
-class="search-box"
-placeholder="Search equipment..."
-onkeyup="searchEquipment()">
+        </div>
 
 
-<div class="table-container">
+        <div class="table-container">
 
-<table>
+            <table>
 
-<thead>
+                <thead>
 
-<tr>
+                    <tr>
 
-<th class="machine-number">
-No.
-</th>
+                        <th>No.</th>
 
-<th>
-Equipment / Machine
-</th>
+                        <th>Equipment Name</th>
 
-<th>
-Category
-</th>
+                        <th>Category</th>
 
-</tr>
+                    </tr>
 
-</thead>
+                </thead>
 
-<tbody id="equipmentTableBody">
-</tbody>
+                <tbody id="equipmentTable">
 
-</table>
+                </tbody>
 
-</div>
+            </table>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
 
@@ -766,158 +565,103 @@ Category
      ANNUAL PM
 ========================================================= -->
 
-<section
-class="section"
-id="annualPM">
+<section class="section"
+         id="annualPM">
 
-<div class="section-header">
+    <div class="section-title">
+        Annual Preventive Maintenance Schedule
+    </div>
 
-<h2>Annual Preventive Maintenance</h2>
+    <div class="section-body">
 
-<p>
-Select a month, group and machine to view the annual PM assignment.
-</p>
+        <div class="selection-panel">
 
-</div>
+            <div class="selection-title">
+                Select Annual PM Month
+            </div>
 
+            <div class="selection-grid">
 
-<div class="card">
+                <div class="form-group">
 
-<h3 class="card-title">
-Annual PM Selection
-</h3>
+                    <label>
+                        Month
+                    </label>
 
+                    <select id="annualMonth"
+                            onchange="loadAnnualGroups()">
 
-<div class="selection-grid">
+                        <option value="">
+                            Select Month
+                        </option>
 
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
 
-<div class="form-group">
+                    </select>
 
-<label>
-Select Month
-</label>
-
-<select
-id="annualMonthSelect"
-onchange="updateAnnualPM()">
-
-<option value="">
--- Select Month --
-</option>
-
-<option value="August">
-August
-</option>
-
-<option value="September">
-September
-</option>
-
-<option value="October">
-October
-</option>
-
-<option value="November">
-November
-</option>
-
-<option value="December">
-December
-</option>
-
-<option value="January">
-January
-</option>
-
-<option value="February">
-February
-</option>
-
-<option value="March">
-March
-</option>
-
-<option value="April">
-April
-</option>
-
-<option value="May">
-May
-</option>
-
-<option value="June">
-June
-</option>
-
-</select>
-
-</div>
+                </div>
 
 
-<div class="form-group">
+                <div class="form-group">
 
-<label>
-PM Group
-</label>
+                    <label>
+                        PM Group
+                    </label>
 
-<select
-id="annualGroupSelect"
-onchange="displayAnnualMachines()">
+                    <select id="annualGroup"
+                            onchange="loadAnnualMachines()">
 
-<option value="">
--- Select Group --
-</option>
+                        <option value="">
+                            Select Group
+                        </option>
 
-<option value="Group 1">
-Group 1
-</option>
+                    </select>
 
-<option value="Group 2">
-Group 2
-</option>
-
-</select>
-
-</div>
+                </div>
 
 
-<div class="form-group">
+                <div class="form-group">
 
-<label>
-Machine
-</label>
+                    <label>
+                        Machine
+                    </label>
 
-<select
-id="annualMachineSelect"
-onchange="displayAnnualMachine()">
+                    <select id="annualMachine"
+                            onchange="displayAnnualMachine()">
 
-<option value="">
--- Select Machine --
-</option>
+                        <option value="">
+                            Select Machine
+                        </option>
 
-</select>
+                    </select>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-
-<div
-class="selection-info"
-id="annualInfo">
-
-Select a month and PM group.
-
-</div>
+        </div>
 
 
-<div
-class="machine-grid"
-id="annualMachineDisplay">
+        <div id="annualResult">
 
-</div>
+            <div class="empty-message">
+                Select month, group and machine.
+            </div>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
 
@@ -927,158 +671,103 @@ id="annualMachineDisplay">
      MONTHLY PM
 ========================================================= -->
 
-<section
-class="section"
-id="monthlyPM">
+<section class="section"
+         id="monthlyPM">
 
-<div class="section-header">
+    <div class="section-title">
+        Monthly Preventive Maintenance
+    </div>
 
-<h2>Monthly Preventive Maintenance</h2>
+    <div class="section-body">
 
-<p>
-Select a month and machine group to view the monthly PM schedule.
-</p>
+        <div class="selection-panel">
 
-</div>
+            <div class="selection-title">
+                Select Monthly PM
+            </div>
 
+            <div class="selection-grid">
 
-<div class="card">
+                <div class="form-group">
 
-<h3 class="card-title">
-Monthly PM Selection
-</h3>
+                    <label>
+                        Month
+                    </label>
 
+                    <select id="monthlyMonth"
+                            onchange="loadMonthlyGroups()">
 
-<div class="selection-grid">
+                        <option value="">
+                            Select Month
+                        </option>
 
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
 
-<div class="form-group">
+                    </select>
 
-<label>
-Select Month
-</label>
-
-<select
-id="monthlyMonthSelect"
-onchange="updateMonthlyPM()">
-
-<option value="">
--- Select Month --
-</option>
-
-<option value="August">
-August
-</option>
-
-<option value="September">
-September
-</option>
-
-<option value="October">
-October
-</option>
-
-<option value="November">
-November
-</option>
-
-<option value="December">
-December
-</option>
-
-<option value="January">
-January
-</option>
-
-<option value="February">
-February
-</option>
-
-<option value="March">
-March
-</option>
-
-<option value="April">
-April
-</option>
-
-<option value="May">
-May
-</option>
-
-<option value="June">
-June
-</option>
-
-</select>
-
-</div>
+                </div>
 
 
-<div class="form-group">
+                <div class="form-group">
 
-<label>
-PM Group
-</label>
+                    <label>
+                        PM Group
+                    </label>
 
-<select
-id="monthlyGroupSelect"
-onchange="displayMonthlyMachines()">
+                    <select id="monthlyGroup"
+                            onchange="loadMonthlyMachines()">
 
-<option value="">
--- Select Group --
-</option>
+                        <option value="">
+                            Select Group
+                        </option>
 
-<option value="Group 1">
-Group 1
-</option>
+                    </select>
 
-<option value="Group 2">
-Group 2
-</option>
-
-</select>
-
-</div>
+                </div>
 
 
-<div class="form-group">
+                <div class="form-group">
 
-<label>
-Machine
-</label>
+                    <label>
+                        Machine
+                    </label>
 
-<select
-id="monthlyMachineSelect"
-onchange="displayMonthlyMachine()">
+                    <select id="monthlyMachine"
+                            onchange="displayMonthlyMachine()">
 
-<option value="">
--- Select Machine --
-</option>
+                        <option value="">
+                            Select Machine
+                        </option>
 
-</select>
+                    </select>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-
-<div
-class="selection-info"
-id="monthlyInfo">
-
-Select a month and PM group.
-
-</div>
+        </div>
 
 
-<div
-class="table-container"
-id="monthlyTableContainer">
+        <div id="monthlyResult">
 
-</div>
+            <div class="empty-message">
+                Select month, group and machine.
+            </div>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
 
@@ -1088,165 +777,119 @@ id="monthlyTableContainer">
      WEEKLY PM
 ========================================================= -->
 
-<section
-class="section"
-id="weeklyPM">
+<section class="section"
+         id="weeklyPM">
 
-<div class="section-header">
+    <div class="section-title">
+        Weekly Preventive Maintenance
+    </div>
 
-<h2>Weekly Preventive Maintenance</h2>
+    <div class="section-body">
 
-<p>
-Select the month and one of the four maintenance weeks.
-</p>
+        <div class="selection-panel">
 
-</div>
+            <div class="selection-title">
+                Select Weekly PM
+            </div>
 
-
-<div class="card">
-
-<h3 class="card-title">
-Weekly PM Selection
-</h3>
+            <div class="selection-grid">
 
 
-<div class="selection-grid">
+                <div class="form-group">
+
+                    <label>
+                        Month
+                    </label>
+
+                    <select id="weeklyMonth"
+                            onchange="loadWeeklyMachines()">
+
+                        <option value="">
+                            Select Month
+                        </option>
+
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+
+                    </select>
+
+                </div>
 
 
-<div class="form-group">
+                <div class="form-group">
 
-<label>
-Select Month
-</label>
+                    <label>
+                        Week
+                    </label>
 
-<select
-id="weeklyMonthSelect"
-onchange="updateWeeklyPM()">
+                    <select id="weeklyWeek"
+                            onchange="loadWeeklyMachines()">
 
-<option value="">
--- Select Month --
-</option>
+                        <option value="">
+                            Select Week
+                        </option>
 
-<option value="August">
-August
-</option>
+                        <option value="1">
+                            Week 1
+                        </option>
 
-<option value="September">
-September
-</option>
+                        <option value="2">
+                            Week 2
+                        </option>
 
-<option value="October">
-October
-</option>
+                        <option value="3">
+                            Week 3
+                        </option>
 
-<option value="November">
-November
-</option>
+                        <option value="4">
+                            Week 4
+                        </option>
 
-<option value="December">
-December
-</option>
+                    </select>
 
-<option value="January">
-January
-</option>
-
-<option value="February">
-February
-</option>
-
-<option value="March">
-March
-</option>
-
-<option value="April">
-April
-</option>
-
-<option value="May">
-May
-</option>
-
-<option value="June">
-June
-</option>
-
-</select>
-
-</div>
+                </div>
 
 
-<div class="form-group">
+                <div class="form-group">
 
-<label>
-Week
-</label>
+                    <label>
+                        Technician
+                    </label>
 
-<select
-id="weeklyWeekSelect"
-onchange="updateWeeklyPM()">
+                    <select id="weeklyTechnician">
 
-<option value="">
--- Select Week --
-</option>
+                        <option value="">
+                            Select Technician
+                        </option>
 
-<option value="1">
-Week 1
-</option>
+                    </select>
 
-<option value="2">
-Week 2
-</option>
+                </div>
 
-<option value="3">
-Week 3
-</option>
+            </div>
 
-<option value="4">
-Week 4
-</option>
-
-</select>
-
-</div>
+        </div>
 
 
-<div class="form-group">
+        <div id="weeklyResult">
 
-<label>
-Assigned Technician
-</label>
+            <div class="empty-message">
+                Select month and week.
+            </div>
 
-<select
-id="weeklyTechnicianSelect">
+        </div>
 
-<option value="">
--- Select Technician --
-</option>
-
-</select>
-
-</div>
-
-</div>
-
-
-<div
-class="selection-info"
-id="weeklyInfo">
-
-Select a month and week.
-
-</div>
-
-
-<div
-class="table-container"
-id="weeklyTableContainer">
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -1256,243 +899,210 @@ id="weeklyTableContainer">
      DAILY MAINTENANCE WORK
 ========================================================= -->
 
-<section
-class="section"
-id="dailyWork">
+<section class="section"
+         id="dailyWork">
 
-<div class="section-header">
+    <div class="section-title">
+        Daily Maintenance Work
+    </div>
 
-<h2>Daily Maintenance Work</h2>
+    <div class="section-body">
 
-<p>
-Record daily maintenance activities and save them locally and to Google Sheets.
-</p>
 
-</div>
+        <form id="dailyWorkForm">
 
 
-<div class="card">
+            <div class="form-grid">
 
-<h3 class="card-title">
-Daily Maintenance Entry
-</h3>
 
+                <div class="form-group">
 
-<form id="dailyWorkForm">
+                    <label>
+                        Date
+                    </label>
 
+                    <input
+                        type="date"
+                        id="workDate"
+                        required>
 
-<div class="form-grid">
+                </div>
 
 
-<div class="form-group">
+                <div class="form-group">
 
-<label>
-Date
-</label>
+                    <label>
+                        Time
+                    </label>
 
-<input
-type="date"
-id="workDate"
-required>
+                    <input
+                        type="time"
+                        id="workTime"
+                        required>
 
-</div>
+                </div>
 
 
-<div class="form-group">
+                <div class="form-group">
 
-<label>
-Time
-</label>
+                    <label>
+                        Equipment
+                    </label>
 
-<input
-type="time"
-id="workTime"
-required>
+                    <select id="workEquipment"
+                            required>
 
-</div>
+                        <option value="">
+                            Select Equipment
+                        </option>
 
+                    </select>
 
-<div class="form-group">
+                </div>
 
-<label>
-Equipment
-</label>
 
-<select
-id="workEquipment"
-required>
+                <div class="form-group">
 
-<option value="">
--- Select Equipment --
-</option>
+                    <label>
+                        Assigned Technician
+                    </label>
 
-</select>
+                    <select id="workTechnician"
+                            required>
 
-</div>
+                        <option value="">
+                            Select Technician
+                        </option>
 
+                    </select>
 
-<div class="form-group">
+                </div>
 
-<label>
-Assigned Technician
-</label>
 
-<select
-id="workTechnician"
-required>
+                <div class="form-group">
 
-<option value="">
--- Select Technician --
-</option>
+                    <label>
+                        Work Type
+                    </label>
 
-</select>
+                    <select id="workType"
+                            required>
 
-</div>
+                        <option value="">
+                            Select Work Type
+                        </option>
 
+                    </select>
 
-<div class="form-group">
+                </div>
 
-<label>
-Work Type
-</label>
 
-<select
-id="workType"
-required>
+                <div class="form-group">
 
-<option value="">
--- Select Work Type --
-</option>
+                    <label>
+                        Priority
+                    </label>
 
-<option>
-Preventive Maintenance
-</option>
+                    <select id="workPriority"
+                            required>
 
-<option>
-Daily Inspection
-</option>
+                        <option value="">
+                            Select Priority
+                        </option>
 
-<option>
-Breakdown Repair
-</option>
+                        <option value="High">
+                            High
+                        </option>
 
-<option>
-Corrective Maintenance
-</option>
+                        <option value="Medium">
+                            Medium
+                        </option>
 
-<option>
-Electrical Work
-</option>
+                        <option value="Low">
+                            Low
+                        </option>
 
-<option>
-Mechanical Work
-</option>
+                    </select>
 
-<option>
-Lubrication
-</option>
+                </div>
 
-<option>
-Cleaning
-</option>
 
-<option>
-Modification
-</option>
+                <div class="form-group full-width">
 
-</select>
+                    <label>
+                        Work Description
+                    </label>
 
-</div>
+                    <textarea
+                        id="workDescription"
+                        placeholder="Enter maintenance work description..."
+                        required></textarea>
 
+                </div>
 
-<div class="form-group">
 
-<label>
-Priority
-</label>
+            </div>
 
-<select
-id="workPriority"
-required>
 
-<option value="">
--- Select Priority --
-</option>
+            <div class="button-row">
 
-<option value="High">
-High
-</option>
+                <button
+                    type="submit"
+                    class="btn-success">
 
-<option value="Medium">
-Medium
-</option>
+                    Save Daily Work
 
-<option value="Low">
-Low
-</option>
+                </button>
 
-</select>
 
-</div>
+                <button
+                    type="button"
+                    class="btn-info"
+                    onclick="clearDailyForm()">
 
+                    Clear
 
-<div class="form-group full">
+                </button>
 
-<label>
-Work Description
-</label>
+            </div>
 
-<textarea
-id="workDescription"
-placeholder="Enter maintenance work performed, machine problem, inspection result, spare parts used, action taken, etc."
-required></textarea>
+        </form>
 
-</div>
 
-</div>
+        <br>
 
 
-<div class="button-row">
+        <div class="table-container">
 
-<button
-type="submit"
-class="btn btn-success">
+            <table>
 
-Save Daily Work
+                <thead>
 
-</button>
+                    <tr>
 
-<button
-type="button"
-class="btn btn-secondary"
-onclick="clearDailyForm()">
+                        <th>No.</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Equipment</th>
+                        <th>Technician</th>
+                        <th>Work Type</th>
+                        <th>Priority</th>
+                        <th>Description</th>
+                        <th>Action</th>
 
-Clear
+                    </tr>
 
-</button>
+                </thead>
 
-</div>
+                <tbody id="dailyWorkTable">
 
-</form>
+                </tbody>
 
-</div>
+            </table>
 
+        </div>
 
-
-<div class="card">
-
-<h3 class="card-title">
-Saved Daily Maintenance Records
-</h3>
-
-
-<div
-class="table-container"
-id="dailyRecordsContainer">
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -1502,75 +1112,55 @@ id="dailyRecordsContainer">
      NOTIFICATION
 ========================================================= -->
 
-<section
-class="section"
-id="notification">
+<section class="section"
+         id="notification">
 
-<div class="section-header">
+    <div class="section-title">
+        Notification
+    </div>
 
-<h2>Maintenance Notification</h2>
+    <div class="section-body">
 
-<p>
-Enable browser notifications for maintenance reminders.
-</p>
+        <div class="notification-box">
 
-</div>
+            <div id="notificationStatus"
+                 class="notification-status">
 
+                Notification permission:
+                Checking...
 
-<div class="card">
-
-<h3 class="card-title">
-Notification Control
-</h3>
+            </div>
 
 
-<div class="notification-box">
+            <div class="button-row">
 
-<p>
-Browser notifications can be used for maintenance reminders and system alerts.
-</p>
+                <button
+                    class="btn-primary"
+                    onclick="enableNotifications()">
 
+                    Enable Notification
 
-<div class="button-row">
-
-<button
-class="btn btn-primary"
-onclick="enableNotifications()">
-
-Enable Notifications
-
-</button>
+                </button>
 
 
-<button
-class="btn btn-info"
-onclick="testNotification()">
+                <button
+                    class="btn-warning"
+                    onclick="testNotification()">
 
-Test Notification
+                    Test Notification
 
-</button>
+                </button>
 
-</div>
+            </div>
 
+        </div>
 
-<div
-class="notification-status"
-id="notificationStatus">
-
-Checking notification status...
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 </div>
-
-</main>
 
 
 
@@ -1580,17 +1170,9 @@ Checking notification status...
 
 <footer>
 
-<strong>
-MELBA PRINTING PUBLISHING & PACKAGING SC.
-</strong>
+    MELBA PRINTING PUBLISHING & PACKAGING SC.<br>
 
-<br>
-
-Electrical & Mechanical Technical Department
-
-<br><br>
-
-Technical Maintenance Management System
+    Electrical & Mechanical Technical Department
 
 </footer>
 
@@ -1599,10 +1181,18 @@ Technical Maintenance Management System
 <script>
 
 /* =========================================================
-   EQUIPMENT DATA
+   GOOGLE SHEETS
 ========================================================= */
 
-const equipment = [
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbwm2rq4RiIO8WqmMiYSabgrLG4ui-ElyNGtD-5b_hxxIlW03io6kSs4ZGEqos6BgMX1/exec";
+
+
+/* =========================================================
+   EQUIPMENT
+========================================================= */
+
+const productionEquipment = [
 
 "Thermal CTP",
 
@@ -1656,7 +1246,12 @@ const equipment = [
 
 "Paper Drilling Machine",
 
-"Horizontal Balling Machine",
+"Horizontal Balling Machine"
+
+];
+
+
+const utilityEquipment = [
 
 "Compressor",
 
@@ -1671,13 +1266,13 @@ const equipment = [
 ];
 
 
-/* =========================================================
-   EQUIPMENT CATEGORIES
-========================================================= */
+const equipment = [
 
-const productionEquipment = equipment.slice(0,27);
+    ...productionEquipment,
 
-const utilityEquipment = equipment.slice(27);
+    ...utilityEquipment
+
+];
 
 
 /* =========================================================
@@ -1759,32 +1354,34 @@ const group2 = [
 
 
 /* =========================================================
-   MONTH / GROUP
+   MONTH → GROUP
 ========================================================= */
 
 const monthGroup = {
 
-"August":"Group 1",
+    July: "",
 
-"September":"Group 2",
+    August: "Group 1",
 
-"October":"Group 2",
+    September: "Group 2",
 
-"November":"Group 1",
+    October: "Group 2",
 
-"December":"Group 1",
+    November: "Group 1",
 
-"January":"Group 2",
+    December: "Group 1",
 
-"February":"Group 2",
+    January: "Group 2",
 
-"March":"Group 1",
+    February: "Group 2",
 
-"April":"Group 1",
+    March: "Group 1",
 
-"May":"Group 2",
+    April: "Group 1",
 
-"June":"Group 2"
+    May: "Group 2",
+
+    June: "Group 2"
 
 };
 
@@ -1819,40 +1416,30 @@ const technicians = [
 
 
 /* =========================================================
-   GOOGLE SHEETS
+   WORK TYPES
 ========================================================= */
 
-const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbwm2rq4RiIO8WqmMiYSabgrLG4ui-ElyNGtD-5b_hxxIlW03io6kSs4ZGEqos6BgMX1/exec";
+const workTypes = [
 
-const GOOGLE_TOKEN = "MELBA2026";
+"Preventive Maintenance",
 
+"Daily Inspection",
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+"Breakdown Repair",
 
-function showSection(sectionId, button){
+"Corrective Maintenance",
 
-    document.querySelectorAll(".section")
-        .forEach(section => section.classList.remove("active"));
+"Electrical Work",
 
-    document
-        .getElementById(sectionId)
-        .classList.add("active");
+"Mechanical Work",
 
-    document.querySelectorAll(".nav-btn")
-        .forEach(btn => btn.classList.remove("active"));
+"Lubrication",
 
-    if(button){
-        button.classList.add("active");
-    }
+"Cleaning",
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-}
+"Modification"
+
+];
 
 
 /* =========================================================
@@ -1863,71 +1450,59 @@ function updateClock(){
 
     const now = new Date();
 
-    const date = now.toLocaleDateString(
-        "en-GB",
-        {
-            day:"2-digit",
-            month:"short",
-            year:"numeric"
-        }
-    );
-
-    const time = now.toLocaleTimeString(
-        "en-GB",
-        {
-            hour:"2-digit",
-            minute:"2-digit",
-            second:"2-digit"
-        }
-    );
-
     document.getElementById("liveClock").textContent =
-        date + " | " + time;
+        now.toLocaleString();
+
 }
+
+setInterval(updateClock,1000);
+
+updateClock();
 
 
 /* =========================================================
-   EQUIPMENT REGISTER
+   EQUIPMENT TABLE
 ========================================================= */
 
-function displayEquipment(){
+function loadEquipmentTable(){
 
-    const tbody =
-        document.getElementById("equipmentTableBody");
+    const table =
+        document.getElementById("equipmentTable");
 
-    tbody.innerHTML = "";
+    table.innerHTML = "";
 
     equipment.forEach((machine,index)=>{
 
         const category =
-            index < 27
+            productionEquipment.includes(machine)
             ? "Production"
             : "Utility";
 
-        const row =
-            document.createElement("tr");
+        const badge =
+            category === "Production"
+            ? "badge-production"
+            : "badge-utility";
 
-        row.innerHTML = `
+        table.innerHTML += `
 
-            <td class="machine-number">
-                ${index + 1}
-            </td>
+            <tr>
 
-            <td>
-                <strong>
-                    ${escapeHTML(machine)}
-                </strong>
-            </td>
+                <td>${index + 1}</td>
 
-            <td>
-                ${category}
-            </td>
+                <td>${machine}</td>
+
+                <td>
+                    <span class="badge ${badge}">
+                        ${category}
+                    </span>
+                </td>
+
+            </tr>
 
         `;
 
-        tbody.appendChild(row);
-
     });
+
 }
 
 
@@ -1937,315 +1512,205 @@ function displayEquipment(){
 
 function searchEquipment(){
 
-    const search =
-        document
-        .getElementById("equipmentSearch")
+    const value =
+        document.getElementById("equipmentSearch")
         .value
         .toLowerCase();
 
     const rows =
-        document.querySelectorAll(
-            "#equipmentTableBody tr"
-        );
+        document
+        .getElementById("equipmentTable")
+        .getElementsByTagName("tr");
 
-    rows.forEach(row=>{
+    for(let row of rows){
 
         const text =
             row.textContent.toLowerCase();
 
         row.style.display =
-            text.includes(search)
+            text.includes(value)
             ? ""
             : "none";
 
-    });
-}
-
-
-/* =========================================================
-   EQUIPMENT DROPDOWN
-========================================================= */
-
-function loadEquipmentDropdown(){
-
-    const select =
-        document.getElementById("workEquipment");
-
-    equipment.forEach(machine=>{
-
-        const option =
-            document.createElement("option");
-
-        option.value = machine;
-        option.textContent = machine;
-
-        select.appendChild(option);
-
-    });
-}
-
-
-/* =========================================================
-   TECHNICIAN DROPDOWNS
-========================================================= */
-
-function loadTechnicians(){
-
-    const selects = [
-
-        document.getElementById("workTechnician"),
-
-        document.getElementById("weeklyTechnicianSelect")
-
-    ];
-
-    selects.forEach(select=>{
-
-        technicians.forEach(technician=>{
-
-            const option =
-                document.createElement("option");
-
-            option.value = technician;
-            option.textContent = technician;
-
-            select.appendChild(option);
-
-        });
-
-    });
+    }
 
 }
 
 
 /* =========================================================
-   GET GROUP MACHINES
+   ANNUAL GROUP
 ========================================================= */
 
-function getGroupMachines(group){
+function loadAnnualGroups(){
+
+    const month =
+        document.getElementById("annualMonth").value;
+
+    const group =
+        document.getElementById("annualGroup");
+
+    const machine =
+        document.getElementById("annualMachine");
+
+    group.innerHTML =
+        `<option value="">Select Group</option>`;
+
+    machine.innerHTML =
+        `<option value="">Select Machine</option>`;
+
+    document.getElementById("annualResult").innerHTML =
+        `<div class="empty-message">
+            Select month, group and machine.
+        </div>`;
+
+    if(!month){
+        return;
+    }
+
+    if(monthGroup[month] === ""){
+
+        group.innerHTML +=
+            `<option value="Not Assigned">
+                Not Assigned
+             </option>`;
+
+        return;
+
+    }
+
+    group.innerHTML +=
+        `<option value="${monthGroup[month]}">
+            ${monthGroup[month]}
+         </option>`;
+
+}
+
+
+/* =========================================================
+   ANNUAL MACHINES
+========================================================= */
+
+function loadAnnualMachines(){
+
+    const group =
+        document.getElementById("annualGroup").value;
+
+    const machine =
+        document.getElementById("annualMachine");
+
+    machine.innerHTML =
+        `<option value="">Select Machine</option>`;
+
+    let list = [];
 
     if(group === "Group 1"){
-        return group1;
+        list = group1;
     }
 
     if(group === "Group 2"){
-        return group2;
+        list = group2;
     }
 
-    return [];
+    list.forEach(item=>{
+
+        machine.innerHTML +=
+            `<option value="${item}">
+                ${item}
+             </option>`;
+
+    });
 
 }
 
 
 /* =========================================================
-   ANNUAL PM
+   DISPLAY ANNUAL MACHINE
 ========================================================= */
-
-function updateAnnualPM(){
-
-    const month =
-        document.getElementById(
-            "annualMonthSelect"
-        ).value;
-
-    const group =
-        monthGroup[month] || "";
-
-    document.getElementById(
-        "annualGroupSelect"
-    ).value = group;
-
-    document.getElementById(
-        "annualMachineSelect"
-    ).innerHTML =
-        `<option value="">-- Select Machine --</option>`;
-
-    document.getElementById(
-        "annualMachineDisplay"
-    ).innerHTML = "";
-
-    if(!month){
-
-        document.getElementById(
-            "annualInfo"
-        ).innerHTML =
-            "Select a month.";
-
-        return;
-    }
-
-    if(!group){
-
-        document.getElementById(
-            "annualInfo"
-        ).innerHTML =
-            "No PM group assigned to this month.";
-
-        return;
-    }
-
-    document.getElementById(
-        "annualInfo"
-    ).innerHTML =
-        `<strong>${month}</strong> is assigned to <strong>${group}</strong>.`;
-
-    displayAnnualMachines();
-
-}
-
-
-function displayAnnualMachines(){
-
-    const group =
-        document.getElementById(
-            "annualGroupSelect"
-        ).value;
-
-    const select =
-        document.getElementById(
-            "annualMachineSelect"
-        );
-
-    select.innerHTML =
-        `<option value="">-- Select Machine --</option>`;
-
-    const machines =
-        getGroupMachines(group);
-
-    machines.forEach(machine=>{
-
-        const option =
-            document.createElement("option");
-
-        option.value = machine;
-        option.textContent = machine;
-
-        select.appendChild(option);
-
-    });
-
-    if(machines.length){
-
-        const allOption =
-            document.createElement("option");
-
-        allOption.value = "ALL";
-        allOption.textContent = "All Machines";
-
-        select.insertBefore(
-            allOption,
-            select.options[1]
-        );
-
-    }
-
-    displayAnnualMachinesCards();
-
-}
-
-
-function displayAnnualMachinesCards(){
-
-    const group =
-        document.getElementById(
-            "annualGroupSelect"
-        ).value;
-
-    const container =
-        document.getElementById(
-            "annualMachineDisplay"
-        );
-
-    const machines =
-        getGroupMachines(group);
-
-    container.innerHTML = "";
-
-    machines.forEach((machine,index)=>{
-
-        const card =
-            document.createElement("div");
-
-        card.className =
-            "machine-card";
-
-        card.innerHTML = `
-
-            <h4>
-                ${escapeHTML(machine)}
-            </h4>
-
-            <p>
-                PM Group: ${group}
-            </p>
-
-            <p>
-                Annual PM Machine ${index + 1}
-            </p>
-
-            <span class="pm-badge">
-                Preventive Maintenance
-            </span>
-
-        `;
-
-        container.appendChild(card);
-
-    });
-
-}
-
 
 function displayAnnualMachine(){
 
-    const selected =
-        document.getElementById(
-            "annualMachineSelect"
-        ).value;
+    const month =
+        document.getElementById("annualMonth").value;
 
     const group =
-        document.getElementById(
-            "annualGroupSelect"
-        ).value;
+        document.getElementById("annualGroup").value;
 
-    const container =
-        document.getElementById(
-            "annualMachineDisplay"
-        );
+    const machine =
+        document.getElementById("annualMachine").value;
 
-    if(!selected){
+    const result =
+        document.getElementById("annualResult");
 
-        displayAnnualMachinesCards();
+    if(!month || !group || !machine){
 
-        return;
-    }
-
-    if(selected === "ALL"){
-
-        displayAnnualMachinesCards();
+        result.innerHTML =
+            `<div class="empty-message">
+                Select month, group and machine.
+             </div>`;
 
         return;
     }
 
-    container.innerHTML = `
+    result.innerHTML = `
 
-        <div class="machine-card">
+        <div class="machine-result">
 
-            <h4>
-                ${escapeHTML(selected)}
-            </h4>
+            <div class="result-header">
+                Annual PM - ${month}
+            </div>
 
-            <p>
-                PM Group: ${group}
-            </p>
+            <div class="table-container">
 
-            <p>
-                Annual Preventive Maintenance
-            </p>
+                <table>
 
-            <span class="pm-badge">
-                Scheduled
-            </span>
+                    <thead>
+
+                        <tr>
+
+                            <th>Month</th>
+                            <th>Group</th>
+                            <th>Machine</th>
+                            <th>PM Status</th>
+                            <th>Maintenance Date</th>
+                            <th>Remarks</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>${month}</td>
+
+                            <td>${group}</td>
+
+                            <td>${machine}</td>
+
+                            <td>
+                                <span class="badge badge-medium">
+                                    Planned
+                                </span>
+                            </td>
+
+                            <td>
+                                <input type="date">
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    placeholder="Enter remarks">
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
 
         </div>
 
@@ -2255,155 +1720,329 @@ function displayAnnualMachine(){
 
 
 /* =========================================================
-   MONTHLY PM
+   MONTHLY GROUP
 ========================================================= */
 
-function updateMonthlyPM(){
+function loadMonthlyGroups(){
 
     const month =
-        document.getElementById(
-            "monthlyMonthSelect"
-        ).value;
+        document.getElementById("monthlyMonth").value;
 
     const group =
-        monthGroup[month] || "";
+        document.getElementById("monthlyGroup");
 
-    document.getElementById(
-        "monthlyGroupSelect"
-    ).value = group;
+    const machine =
+        document.getElementById("monthlyMachine");
 
-    document.getElementById(
-        "monthlyMachineSelect"
-    ).innerHTML =
-        `<option value="">-- Select Machine --</option>`;
+    group.innerHTML =
+        `<option value="">Select Group</option>`;
+
+    machine.innerHTML =
+        `<option value="">Select Machine</option>`;
+
+    document.getElementById("monthlyResult").innerHTML =
+        `<div class="empty-message">
+            Select month, group and machine.
+        </div>`;
 
     if(!month){
-
-        document.getElementById(
-            "monthlyInfo"
-        ).innerHTML =
-            "Select a month.";
-
-        document.getElementById(
-            "monthlyTableContainer"
-        ).innerHTML = "";
-
         return;
     }
 
-    document.getElementById(
-        "monthlyInfo"
-    ).innerHTML =
-        `<strong>${month}</strong> is assigned to <strong>${group}</strong>.`;
+    if(monthGroup[month] === ""){
 
-    displayMonthlyMachines();
+        group.innerHTML +=
+            `<option value="Not Assigned">
+                Not Assigned
+             </option>`;
+
+        return;
+
+    }
+
+    group.innerHTML +=
+        `<option value="${monthGroup[month]}">
+            ${monthGroup[month]}
+         </option>`;
 
 }
 
 
-function displayMonthlyMachines(){
+/* =========================================================
+   MONTHLY MACHINES
+========================================================= */
+
+function loadMonthlyMachines(){
 
     const group =
-        document.getElementById(
-            "monthlyGroupSelect"
-        ).value;
+        document.getElementById("monthlyGroup").value;
 
-    const select =
-        document.getElementById(
-            "monthlyMachineSelect"
-        );
+    const machine =
+        document.getElementById("monthlyMachine");
 
-    select.innerHTML =
-        `<option value="">-- Select Machine --</option>`;
+    machine.innerHTML =
+        `<option value="">Select Machine</option>`;
 
-    const machines =
-        getGroupMachines(group);
+    let list = [];
 
-    machines.forEach(machine=>{
+    if(group === "Group 1"){
+        list = group1;
+    }
 
-        const option =
-            document.createElement("option");
+    if(group === "Group 2"){
+        list = group2;
+    }
 
-        option.value = machine;
-        option.textContent = machine;
+    list.forEach(item=>{
 
-        select.appendChild(option);
+        machine.innerHTML +=
+            `<option value="${item}">
+                ${item}
+             </option>`;
 
     });
 
-    if(machines.length){
-
-        const allOption =
-            document.createElement("option");
-
-        allOption.value = "ALL";
-        allOption.textContent = "All Machines";
-
-        select.insertBefore(
-            allOption,
-            select.options[1]
-        );
-
-    }
-
-    displayMonthlyMachinesTable();
-
 }
 
 
-function displayMonthlyMachinesTable(){
+/* =========================================================
+   DISPLAY MONTHLY MACHINE
+========================================================= */
+
+function displayMonthlyMachine(){
 
     const month =
-        document.getElementById(
-            "monthlyMonthSelect"
-        ).value;
+        document.getElementById("monthlyMonth").value;
 
     const group =
-        document.getElementById(
-            "monthlyGroupSelect"
-        ).value;
+        document.getElementById("monthlyGroup").value;
 
-    const machines =
-        getGroupMachines(group);
+    const machine =
+        document.getElementById("monthlyMachine").value;
 
-    const container =
-        document.getElementById(
-            "monthlyTableContainer"
-        );
+    const result =
+        document.getElementById("monthlyResult");
 
-    if(!machines.length){
+    if(!month || !group || !machine){
 
-        container.innerHTML = "";
+        result.innerHTML =
+            `<div class="empty-message">
+                Select month, group and machine.
+             </div>`;
 
         return;
     }
 
-    let html = `
+    result.innerHTML = `
 
-        <table>
+        <div class="machine-result">
 
-        <thead>
+            <div class="result-header">
+                Monthly PM - ${month}
+            </div>
 
-        <tr>
+            <div class="table-container">
 
-        <th>No.</th>
+                <table>
 
-        <th>Machine</th>
+                    <thead>
 
-        <th>Month</th>
+                        <tr>
 
-        <th>PM Group</th>
+                            <th>Month</th>
+                            <th>Group</th>
+                            <th>Machine</th>
+                            <th>Week</th>
+                            <th>PM Day</th>
+                            <th>Status</th>
+                            <th>Remarks</th>
 
-        <th>Maintenance</th>
+                        </tr>
 
-        </tr>
+                    </thead>
 
-        </thead>
+                    <tbody>
 
-        <tbody>
+                        <tr>
+
+                            <td>${month}</td>
+
+                            <td>${group}</td>
+
+                            <td>${machine}</td>
+
+                            <td>Monthly</td>
+
+                            <td>
+                                <select>
+                                    <option>Monday</option>
+                                    <option>Tuesday</option>
+                                    <option>Wednesday</option>
+                                    <option>Thursday</option>
+                                    <option>Friday</option>
+                                    <option>Saturday</option>
+                                </select>
+                            </td>
+
+                            <td>
+                                <span class="badge badge-medium">
+                                    Planned
+                                </span>
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    placeholder="Remarks">
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
     `;
 
-    machines.forEach((machine,index)=>{
+}
+
+
+/* =========================================================
+   WEEKLY TECHNICIANS
+========================================================= */
+
+function loadTechnicians(){
+
+    const weekly =
+        document.getElementById("weeklyTechnician");
+
+    const daily =
+        document.getElementById("workTechnician");
+
+    technicians.forEach(person=>{
+
+        weekly.innerHTML +=
+            `<option value="${person}">
+                ${person}
+             </option>`;
+
+        daily.innerHTML +=
+            `<option value="${person}">
+                ${person}
+             </option>`;
+
+    });
+
+}
+
+
+/* =========================================================
+   WEEKLY MACHINES
+========================================================= */
+
+function loadWeeklyMachines(){
+
+    const month =
+        document.getElementById("weeklyMonth").value;
+
+    const week =
+        document.getElementById("weeklyWeek").value;
+
+    const result =
+        document.getElementById("weeklyResult");
+
+    if(!month || !week){
+
+        result.innerHTML =
+            `<div class="empty-message">
+                Select month and week.
+             </div>`;
+
+        return;
+
+    }
+
+    let groupName =
+        monthGroup[month];
+
+    if(!groupName){
+
+        result.innerHTML =
+            `<div class="empty-message">
+                No weekly PM group is assigned for ${month}.
+             </div>`;
+
+        return;
+
+    }
+
+    const list =
+        groupName === "Group 1"
+        ? group1
+        : group2;
+
+    let weeklyMachines = [];
+
+    list.forEach((machine,index)=>{
+
+        if(index % 4 === Number(week)-1){
+
+            weeklyMachines.push(machine);
+
+        }
+
+    });
+
+
+    let html = `
+
+        <div class="machine-result">
+
+            <div class="result-header">
+
+                ${month} -
+                ${groupName} -
+                Week ${week}
+
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>No.</th>
+                            <th>Machine</th>
+                            <th>Maintenance Day</th>
+                            <th>Technician</th>
+                            <th>Status</th>
+                            <th>Remarks</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+    `;
+
+
+    weeklyMachines.forEach((machine,index)=>{
+
+        const day =
+            ["Monday",
+             "Tuesday",
+             "Wednesday",
+             "Thursday",
+             "Friday",
+             "Saturday"]
+            [index % 6];
 
         html += `
 
@@ -2414,23 +2053,57 @@ function displayMonthlyMachinesTable(){
                 </td>
 
                 <td>
-                    <strong>
-                        ${escapeHTML(machine)}
-                    </strong>
+                    ${machine}
                 </td>
 
                 <td>
-                    ${month}
+                    ${day}
                 </td>
 
                 <td>
-                    ${group}
+
+                    <select>
+
+                        <option value="">
+                            Select Technician
+                        </option>
+
+                        ${technicians.map(t=>
+                            `<option value="${t}">
+                                ${t}
+                             </option>`
+                        ).join("")}
+
+                    </select>
+
                 </td>
 
                 <td>
-                    <span class="pm-badge">
-                        Monthly PM
-                    </span>
+
+                    <select>
+
+                        <option>
+                            Planned
+                        </option>
+
+                        <option>
+                            Completed
+                        </option>
+
+                        <option>
+                            Pending
+                        </option>
+
+                    </select>
+
+                </td>
+
+                <td>
+
+                    <input
+                        type="text"
+                        placeholder="Remarks">
+
                 </td>
 
             </tr>
@@ -2439,391 +2112,270 @@ function displayMonthlyMachinesTable(){
 
     });
 
-    html += `
-
-        </tbody>
-
-        </table>
-    `;
-
-    container.innerHTML = html;
-
-}
-
-
-function displayMonthlyMachine(){
-
-    const month =
-        document.getElementById(
-            "monthlyMonthSelect"
-        ).value;
-
-    const group =
-        document.getElementById(
-            "monthlyGroupSelect"
-        ).value;
-
-    const machine =
-        document.getElementById(
-            "monthlyMachineSelect"
-        ).value;
-
-    const container =
-        document.getElementById(
-            "monthlyTableContainer"
-        );
-
-    if(!machine){
-
-        displayMonthlyMachinesTable();
-
-        return;
-    }
-
-    if(machine === "ALL"){
-
-        displayMonthlyMachinesTable();
-
-        return;
-    }
-
-    container.innerHTML = `
-
-        <table>
-
-        <thead>
-
-        <tr>
-
-        <th>No.</th>
-
-        <th>Machine</th>
-
-        <th>Month</th>
-
-        <th>PM Group</th>
-
-        <th>Maintenance</th>
-
-        </tr>
-
-        </thead>
-
-        <tbody>
-
-        <tr>
-
-            <td>
-                1
-            </td>
-
-            <td>
-                <strong>
-                    ${escapeHTML(machine)}
-                </strong>
-            </td>
-
-            <td>
-                ${month}
-            </td>
-
-            <td>
-                ${group}
-            </td>
-
-            <td>
-                <span class="pm-badge">
-                    Monthly PM
-                </span>
-            </td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-    `;
-
-}
-
-
-/* =========================================================
-   WEEKLY PM
-   ONLY WEEK 1 - WEEK 4
-========================================================= */
-
-function updateWeeklyPM(){
-
-    const month =
-        document.getElementById(
-            "weeklyMonthSelect"
-        ).value;
-
-    const week =
-        document.getElementById(
-            "weeklyWeekSelect"
-        ).value;
-
-    const container =
-        document.getElementById(
-            "weeklyTableContainer"
-        );
-
-    const info =
-        document.getElementById(
-            "weeklyInfo"
-        );
-
-    if(!month || !week){
-
-        info.innerHTML =
-            "Select a month and Week 1, Week 2, Week 3 or Week 4.";
-
-        container.innerHTML = "";
-
-        return;
-    }
-
-
-    const group =
-        monthGroup[month];
-
-    if(!group){
-
-        info.innerHTML =
-            "No PM group assigned to this month.";
-
-        container.innerHTML = "";
-
-        return;
-    }
-
-
-    const machines =
-        getGroupMachines(group);
-
-
-    const weekNumber =
-        Number(week);
-
-
-    /*
-       FOUR-WEEK DISTRIBUTION
-
-       Week 1:
-       indexes 0,4,8,12
-
-       Week 2:
-       indexes 1,5,9,13
-
-       Week 3:
-       indexes 2,6,10,14
-
-       Week 4:
-       indexes 3,7,11,15
-    */
-
-    const selectedMachines =
-        machines.filter(
-            (machine,index)=>
-                index % 4 === weekNumber - 1
-        );
-
-
-    const days = [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-    ];
-
-
-    info.innerHTML = `
-
-        <strong>${month}</strong>
-        |
-        <strong>${group}</strong>
-        |
-        <strong>Week ${weekNumber}</strong>
-        |
-        ${selectedMachines.length} machines assigned
-
-    `;
-
-
-    let html = `
-
-        <table>
-
-        <thead>
-
-        <tr>
-
-        <th>No.</th>
-
-        <th>Machine</th>
-
-        <th>Week</th>
-
-        <th>Maintenance Day</th>
-
-        <th>PM Group</th>
-
-        <th>Technician</th>
-
-        <th>Status</th>
-
-        </tr>
-
-        </thead>
-
-        <tbody>
-
-    `;
-
-
-    selectedMachines.forEach(
-        (machine,index)=>{
-
-            const day =
-                days[index % days.length];
-
-
-            html += `
-
-                <tr>
-
-                    <td>
-                        ${index + 1}
-                    </td>
-
-                    <td>
-                        <strong>
-                            ${escapeHTML(machine)}
-                        </strong>
-                    </td>
-
-                    <td>
-                        <span class="week-label">
-                            Week ${weekNumber}
-                        </span>
-                    </td>
-
-                    <td>
-                        <span class="day-label">
-                            ${day}
-                        </span>
-                    </td>
-
-                    <td>
-                        ${group}
-                    </td>
-
-                    <td>
-                        <select
-                        style="min-width:180px">
-
-                            <option>
-                                -- Select Technician --
-                            </option>
-
-                            ${technicians.map(
-                                technician =>
-                                `<option>
-                                    ${escapeHTML(technician)}
-                                </option>`
-                            ).join("")}
-
-                        </select>
-                    </td>
-
-                    <td>
-
-                        <span class="status-badge">
-                            Planned
-                        </span>
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
-    );
-
 
     html += `
 
-        </tbody>
+                    </tbody>
 
-        </table>
+                </table>
+
+            </div>
+
+        </div>
 
     `;
 
 
-    container.innerHTML = html;
+    result.innerHTML = html;
 
 }
 
 
 /* =========================================================
-   DATE AND TIME
+   DAILY WORK EQUIPMENT
 ========================================================= */
 
-function setCurrentDateTime(){
+function loadDailyEquipment(){
 
-    const now =
-        new Date();
+    const select =
+        document.getElementById("workEquipment");
 
-    const date =
-        now.toISOString()
-        .split("T")[0];
+    equipment.forEach(machine=>{
 
-    const hours =
-        String(
-            now.getHours()
-        ).padStart(2,"0");
+        select.innerHTML +=
+            `<option value="${machine}">
+                ${machine}
+             </option>`;
 
-    const minutes =
-        String(
-            now.getMinutes()
-        ).padStart(2,"0");
-
-
-    document.getElementById(
-        "workDate"
-    ).value = date;
-
-
-    document.getElementById(
-        "workTime"
-    ).value =
-        `${hours}:${minutes}`;
+    });
 
 }
 
 
 /* =========================================================
-   DAILY LOCAL STORAGE
+   WORK TYPES
+========================================================= */
+
+function loadWorkTypes(){
+
+    const select =
+        document.getElementById("workType");
+
+    workTypes.forEach(type=>{
+
+        select.innerHTML +=
+            `<option value="${type}">
+                ${type}
+             </option>`;
+
+    });
+
+}
+
+
+/* =========================================================
+   DAILY WORK LOCAL STORAGE
 ========================================================= */
 
 function getDailyRecords(){
 
+    return JSON.parse(
+        localStorage.getItem("melbaDailyMaintenance")
+    ) || [];
+
+}
+
+
+function saveDailyRecords(records){
+
+    localStorage.setItem(
+        "melbaDailyMaintenance",
+        JSON.stringify(records)
+    );
+
+}
+
+
+/* =========================================================
+   DISPLAY DAILY WORK
+========================================================= */
+
+function displayDailyWork(){
+
+    const table =
+        document.getElementById("dailyWorkTable");
+
+    const records =
+        getDailyRecords();
+
+    table.innerHTML = "";
+
+    if(records.length === 0){
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td colspan="9"
+                    style="text-align:center;color:#6c757d">
+
+                    No daily maintenance records.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    records.forEach((record,index)=>{
+
+        let badgeClass =
+            "badge-low";
+
+        if(record.priority === "High"){
+            badgeClass = "badge-high";
+        }
+
+        if(record.priority === "Medium"){
+            badgeClass = "badge-medium";
+        }
+
+
+        table.innerHTML += `
+
+            <tr>
+
+                <td>
+                    ${index + 1}
+                </td>
+
+                <td>
+                    ${record.date}
+                </td>
+
+                <td>
+                    ${record.time}
+                </td>
+
+                <td>
+                    ${record.equipment}
+                </td>
+
+                <td>
+                    ${record.technician}
+                </td>
+
+                <td>
+                    ${record.workType}
+                </td>
+
+                <td>
+
+                    <span class="badge ${badgeClass}">
+                        ${record.priority}
+                    </span>
+
+                </td>
+
+                <td>
+                    ${record.description}
+                </td>
+
+                <td>
+
+                    <button
+                        class="btn-danger"
+                        onclick="deleteDailyWork(${index})">
+
+                        Delete
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   SAVE TO GOOGLE SHEETS
+   NO TOKEN
+========================================================= */
+
+async function saveToGoogleSheets(record){
+
+    const payload = {
+
+        action:
+            "saveDailyMaintenance",
+
+        date:
+            record.date,
+
+        time:
+            record.time,
+
+        equipment:
+            record.equipment,
+
+        technician:
+            record.technician,
+
+        workType:
+            record.workType,
+
+        priority:
+            record.priority,
+
+        description:
+            record.description
+
+    };
+
+
     try{
 
-        return JSON.parse(
-            localStorage.getItem(
-                "daily_maintenance_jobs"
-            )
-        ) || [];
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
 
-    }catch(error){
+                method:"POST",
 
-        return [];
+                mode:"no-cors",
+
+                headers:{
+                    "Content-Type":
+                        "text/plain;charset=utf-8"
+                },
+
+                body:
+                    JSON.stringify(payload)
+
+            }
+        );
+
+        console.log(
+            "Daily maintenance sent to Google Sheets."
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Google Sheets error:",
+            error
+        );
 
     }
 
@@ -2838,86 +2390,52 @@ document
 .getElementById("dailyWorkForm")
 .addEventListener(
     "submit",
-    function(event){
+    async function(event){
 
         event.preventDefault();
 
 
         const record = {
 
-            id:
-                Date.now(),
-
             date:
-                document.getElementById(
-                    "workDate"
-                ).value,
+                document.getElementById("workDate").value,
 
             time:
-                document.getElementById(
-                    "workTime"
-                ).value,
+                document.getElementById("workTime").value,
 
             equipment:
-                document.getElementById(
-                    "workEquipment"
-                ).value,
+                document.getElementById("workEquipment").value,
 
             technician:
-                document.getElementById(
-                    "workTechnician"
-                ).value,
+                document.getElementById("workTechnician").value,
 
             workType:
-                document.getElementById(
-                    "workType"
-                ).value,
+                document.getElementById("workType").value,
 
             priority:
-                document.getElementById(
-                    "workPriority"
-                ).value,
+                document.getElementById("workPriority").value,
 
             description:
-                document.getElementById(
-                    "workDescription"
-                ).value,
-
-            createdAt:
-                new Date().toISOString()
+                document.getElementById("workDescription").value
 
         };
 
 
-        let records =
+        const records =
             getDailyRecords();
 
+        records.push(record);
 
-        records.unshift(record);
+        saveDailyRecords(records);
 
-
-        /*
-           Keep latest 200 records
-        */
-
-        records =
-            records.slice(0,200);
+        displayDailyWork();
 
 
-        localStorage.setItem(
-            "daily_maintenance_jobs",
-            JSON.stringify(records)
-        );
-
-
-        displayDailyRecords();
-
-
-        saveToGoogleSheets(record);
+        await saveToGoogleSheets(record);
 
 
         alert(
-            "Daily maintenance work saved successfully."
+            "Daily maintenance work saved."
         );
 
 
@@ -2928,210 +2446,14 @@ document
 
 
 /* =========================================================
-   DISPLAY DAILY RECORDS
-========================================================= */
-
-function displayDailyRecords(){
-
-    const records =
-        getDailyRecords();
-
-    const container =
-        document.getElementById(
-            "dailyRecordsContainer"
-        );
-
-
-    if(!records.length){
-
-        container.innerHTML = `
-
-            <div class="empty">
-
-                No daily maintenance records
-                have been saved yet.
-
-            </div>
-
-        `;
-
-        return;
-    }
-
-
-    let html = `
-
-        <table>
-
-        <thead>
-
-        <tr>
-
-        <th>No.</th>
-
-        <th>Date</th>
-
-        <th>Time</th>
-
-        <th>Equipment</th>
-
-        <th>Technician</th>
-
-        <th>Work Type</th>
-
-        <th>Priority</th>
-
-        <th>Description</th>
-
-        <th>Action</th>
-
-        </tr>
-
-        </thead>
-
-        <tbody>
-
-    `;
-
-
-    records.forEach(
-        (record,index)=>{
-
-            let priorityClass = "";
-
-            if(record.priority === "High"){
-                priorityClass =
-                    "priority-high";
-            }
-
-            if(record.priority === "Medium"){
-                priorityClass =
-                    "priority-medium";
-            }
-
-            if(record.priority === "Low"){
-                priorityClass =
-                    "priority-low";
-            }
-
-
-            html += `
-
-                <tr>
-
-                    <td>
-                        ${index + 1}
-                    </td>
-
-                    <td>
-                        ${escapeHTML(record.date)}
-                    </td>
-
-                    <td>
-                        ${escapeHTML(record.time)}
-                    </td>
-
-                    <td>
-                        ${escapeHTML(record.equipment)}
-                    </td>
-
-                    <td>
-                        ${escapeHTML(record.technician)}
-                    </td>
-
-                    <td>
-                        ${escapeHTML(record.workType)}
-                    </td>
-
-                    <td class="${priorityClass}">
-                        ${escapeHTML(record.priority)}
-                    </td>
-
-                    <td>
-                        ${escapeHTML(record.description)}
-                    </td>
-
-                    <td>
-
-                        <button
-                        class="delete-btn"
-                        onclick="deleteDailyRecord(${record.id})">
-
-                            Delete
-
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
-    );
-
-
-    html += `
-
-        </tbody>
-
-        </table>
-
-    `;
-
-
-    container.innerHTML = html;
-
-}
-
-
-/* =========================================================
-   DELETE DAILY RECORD
-========================================================= */
-
-function deleteDailyRecord(id){
-
-    const confirmed =
-        confirm(
-            "Delete this maintenance record?"
-        );
-
-    if(!confirmed){
-        return;
-    }
-
-
-    let records =
-        getDailyRecords();
-
-
-    records =
-        records.filter(
-            record =>
-                record.id !== id
-        );
-
-
-    localStorage.setItem(
-        "daily_maintenance_jobs",
-        JSON.stringify(records)
-    );
-
-
-    displayDailyRecords();
-
-}
-
-
-/* =========================================================
    CLEAR DAILY FORM
 ========================================================= */
 
 function clearDailyForm(){
 
     document
-    .getElementById("dailyWorkForm")
-    .reset();
+        .getElementById("dailyWorkForm")
+        .reset();
 
 
     setCurrentDateTime();
@@ -3140,67 +2462,63 @@ function clearDailyForm(){
 
 
 /* =========================================================
-   GOOGLE SHEETS SAVE
+   DELETE DAILY WORK
 ========================================================= */
 
-function saveToGoogleSheets(record){
+function deleteDailyWork(index){
 
-    const payload = {
-
-        token:GOOGLE_TOKEN,
-
-        action:"saveDailyMaintenance",
-
-        date:record.date,
-
-        time:record.time,
-
-        equipment:record.equipment,
-
-        technician:record.technician,
-
-        workType:record.workType,
-
-        priority:record.priority,
-
-        description:record.description
-
-    };
+    if(
+        !confirm(
+            "Delete this maintenance record?"
+        )
+    ){
+        return;
+    }
 
 
-    fetch(
-        GOOGLE_SCRIPT_URL,
-        {
+    const records =
+        getDailyRecords();
 
-            method:"POST",
+    records.splice(index,1);
 
-            mode:"no-cors",
+    saveDailyRecords(records);
 
-            headers:{
-                "Content-Type":
-                "text/plain;charset=utf-8"
-            },
+    displayDailyWork();
 
-            body:
-                JSON.stringify(payload)
+}
 
-        }
-    )
-    .then(()=>{
 
-        console.log(
-            "Daily maintenance sent to Google Sheets."
-        );
+/* =========================================================
+   CURRENT DATE AND TIME
+========================================================= */
 
-    })
-    .catch(error=>{
+function setCurrentDateTime(){
 
-        console.error(
-            "Google Sheets error:",
-            error
-        );
+    const now =
+        new Date();
 
-    });
+
+    const date =
+        now.toISOString()
+        .split("T")[0];
+
+
+    const hours =
+        String(now.getHours())
+        .padStart(2,"0");
+
+
+    const minutes =
+        String(now.getMinutes())
+        .padStart(2,"0");
+
+
+    document.getElementById("workDate").value =
+        date;
+
+
+    document.getElementById("workTime").value =
+        `${hours}:${minutes}`;
 
 }
 
@@ -3211,7 +2529,7 @@ function saveToGoogleSheets(record){
 
 function updateNotificationStatus(){
 
-    const status =
+    const element =
         document.getElementById(
             "notificationStatus"
         );
@@ -3219,7 +2537,7 @@ function updateNotificationStatus(){
 
     if(!("Notification" in window)){
 
-        status.innerHTML =
+        element.textContent =
             "Browser notifications are not supported.";
 
         return;
@@ -3227,28 +2545,9 @@ function updateNotificationStatus(){
     }
 
 
-    if(Notification.permission === "granted"){
-
-        status.innerHTML =
-            "Notifications are enabled.";
-
-        return;
-
-    }
-
-
-    if(Notification.permission === "denied"){
-
-        status.innerHTML =
-            "Notifications are blocked. Please allow them in browser settings.";
-
-        return;
-
-    }
-
-
-    status.innerHTML =
-        "Notifications have not been enabled yet.";
+    element.textContent =
+        "Notification permission: " +
+        Notification.permission;
 
 }
 
@@ -3276,10 +2575,10 @@ async function enableNotifications(){
     if(permission === "granted"){
 
         new Notification(
-            "MELBA Maintenance System",
+            "MELBA Maintenance",
             {
                 body:
-                "Maintenance notifications are now enabled."
+                "Notifications have been enabled."
             }
         );
 
@@ -3293,7 +2592,7 @@ function testNotification(){
     if(!("Notification" in window)){
 
         alert(
-            "This browser does not support notifications."
+            "Notifications are not supported."
         );
 
         return;
@@ -3313,12 +2612,10 @@ function testNotification(){
 
 
     new Notification(
-        "MELBA Maintenance Reminder",
+        "MELBA Maintenance",
         {
-
             body:
             "This is a test maintenance notification."
-
         }
     );
 
@@ -3326,75 +2623,26 @@ function testNotification(){
 
 
 /* =========================================================
-   ESCAPE HTML
+   INITIALIZE
 ========================================================= */
 
-function escapeHTML(value){
+loadEquipmentTable();
 
-    if(value === null ||
-       value === undefined){
+loadDailyEquipment();
 
-        return "";
+loadTechnicians();
 
-    }
+loadWorkTypes();
 
+displayDailyWork();
 
-    return String(value)
+setCurrentDateTime();
 
-        .replace(/&/g,"&amp;")
-
-        .replace(/</g,"&lt;")
-
-        .replace(/>/g,"&gt;")
-
-        .replace(/"/g,"&quot;")
-
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================================================
-   INITIALIZATION
-========================================================= */
-
-function initialize(){
-
-    displayEquipment();
-
-    loadEquipmentDropdown();
-
-    loadTechnicians();
-
-    setCurrentDateTime();
-
-    displayDailyRecords();
-
-    updateNotificationStatus();
-
-    updateClock();
-
-}
-
-
-/* =========================================================
-   START
-========================================================= */
-
-initialize();
-
-
-/* =========================================================
-   CLOCK INTERVAL
-========================================================= */
-
-setInterval(
-    updateClock,
-    1000
-);
+updateNotificationStatus();
 
 </script>
 
+
 </body>
+
 </html>
-```
